@@ -2,50 +2,91 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
-const neueMontreal = localFont({
+// Configure DM Sans font
+const dmSans = localFont({
   src: [
     {
-      path: "./fonts/NeueMontreal-Light.woff",
+      path: "./fonts/DMSans-Thin.ttf",
+      weight: "100",
+      style: "normal",
+    },
+    {
+      path: "./fonts/DMSans-ThinItalic.ttf",
+      weight: "100",
+      style: "italic",
+    },
+    {
+      path: "./fonts/DMSans-Light.ttf",
       weight: "300",
       style: "normal",
     },
     {
-      path: "./fonts/NeueMontreal-LightItalic.woff",
+      path: "./fonts/DMSans-LightItalic.ttf",
       weight: "300",
       style: "italic",
     },
     {
-      path: "./fonts/NeueMontreal-Regular.woff",
+      path: "./fonts/DMSans-Regular.ttf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "./fonts/NeueMontreal-Italic.woff",
+      path: "./fonts/DMSans-Italic.ttf",
       weight: "400",
       style: "italic",
     },
     {
-      path: "./fonts/NeueMontreal-Medium.woff",
+      path: "./fonts/DMSans-Medium.ttf",
       weight: "500",
       style: "normal",
     },
     {
-      path: "./fonts/NeueMontreal-MediumItalic.woff",
+      path: "./fonts/DMSans-MediumItalic.ttf",
       weight: "500",
       style: "italic",
     },
     {
-      path: "./fonts/NeueMontreal-Bold.woff",
+      path: "./fonts/DMSans-SemiBold.ttf",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "./fonts/DMSans-SemiBoldItalic.ttf",
+      weight: "600",
+      style: "italic",
+    },
+    {
+      path: "./fonts/DMSans-Bold.ttf",
       weight: "700",
       style: "normal",
     },
     {
-      path: "./fonts/NeueMontreal-BoldItalic.woff",
+      path: "./fonts/DMSans-BoldItalic.ttf",
       weight: "700",
+      style: "italic",
+    },
+    {
+      path: "./fonts/DMSans-ExtraBold.ttf",
+      weight: "800",
+      style: "normal",
+    },
+    {
+      path: "./fonts/DMSans-ExtraBoldItalic.ttf",
+      weight: "800",
+      style: "italic",
+    },
+    {
+      path: "./fonts/DMSans-Black.ttf",
+      weight: "900",
+      style: "normal",
+    },
+    {
+      path: "./fonts/DMSans-BlackItalic.ttf",
+      weight: "900",
       style: "italic",
     },
   ],
-  variable: "--font-neue-montreal",
+  variable: "--font-dm-sans",
 });
 
 export const metadata: Metadata = {
@@ -60,9 +101,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${neueMontreal.variable} font-neue-montreal`}>
-        {children}
-      </body>
+      <body className={`${dmSans.variable} font-dm-sans`}>{children}</body>
     </html>
   );
 }

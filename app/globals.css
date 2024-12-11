@@ -3,10 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --font-neue-montreal: "Neue Montreal", sans-serif;
+  --font-dm-sans: "DM Sans", sans-serif;
 }
+
 body {
-  font-family: var(--font-neue-montreal);
+  font-family: var(--font-dm-sans);
 }
 
 @layer base {
@@ -72,4 +73,61 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* NAVBAR BUTTON  */
+.button {
+  width: 65px;
+  height: 56px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.burger {
+  width: 100%;
+}
+.burger::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 55%;
+  margin: auto;
+  background-color: rgb(0, 0, 0);
+  position: relative;
+  transition: transform 0.3s;
+  top: -7px;
+}
+.burger::before {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 55%;
+  margin: auto;
+  background-color: rgb(0, 0, 0);
+  position: relative;
+  transition: transform 0.3s;
+  top: 7px;
+}
+.burgerActive::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 55%;
+  margin: auto;
+  background-color: rgb(0, 0, 0);
+  position: relative;
+  transform: rotate(-45deg);
+  top: -1px;
+}
+.burgerActive::before {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 55%;
+  margin: auto;
+  background-color: rgb(0, 0, 0);
+  position: relative;
+  transform: rotate(45deg);
+  top: 0;
 }
