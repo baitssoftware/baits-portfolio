@@ -2,15 +2,51 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+// Configure Neue Montreal font
+const neueMontreal = localFont({
+  src: [
+    {
+      path: "./fonts/NeueMontreal-Light.otf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "./fonts/NeueMontreal-LightItalic.otf",
+      weight: "300",
+      style: "italic",
+    },
+    {
+      path: "./fonts/NeueMontreal-Regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/NeueMontreal-Italic.otf",
+      weight: "400",
+      style: "italic",
+    },
+    {
+      path: "./fonts/NeueMontreal-Medium.otf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "./fonts/NeueMontreal-MediumItalic.otf",
+      weight: "500",
+      style: "italic",
+    },
+    {
+      path: "./fonts/NeueMontreal-Bold.otf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "./fonts/NeueMontreal-BoldItalic.otf",
+      weight: "700",
+      style: "italic",
+    },
+  ],
+  variable: "--font-neue-montreal",
 });
 
 export const metadata: Metadata = {
@@ -25,9 +61,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${neueMontreal.variable} font-neue-montreal`}>
         {children}
       </body>
     </html>
