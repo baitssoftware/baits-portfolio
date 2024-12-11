@@ -2,46 +2,45 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
-// Configure Neue Montreal font
 const neueMontreal = localFont({
   src: [
     {
-      path: "./fonts/NeueMontreal-Light.otf",
+      path: "./fonts/NeueMontreal-Light.woff",
       weight: "300",
       style: "normal",
     },
     {
-      path: "./fonts/NeueMontreal-LightItalic.otf",
+      path: "./fonts/NeueMontreal-LightItalic.woff",
       weight: "300",
       style: "italic",
     },
     {
-      path: "./fonts/NeueMontreal-Regular.otf",
+      path: "./fonts/NeueMontreal-Regular.woff",
       weight: "400",
       style: "normal",
     },
     {
-      path: "./fonts/NeueMontreal-Italic.otf",
+      path: "./fonts/NeueMontreal-Italic.woff",
       weight: "400",
       style: "italic",
     },
     {
-      path: "./fonts/NeueMontreal-Medium.otf",
+      path: "./fonts/NeueMontreal-Medium.woff",
       weight: "500",
       style: "normal",
     },
     {
-      path: "./fonts/NeueMontreal-MediumItalic.otf",
+      path: "./fonts/NeueMontreal-MediumItalic.woff",
       weight: "500",
       style: "italic",
     },
     {
-      path: "./fonts/NeueMontreal-Bold.otf",
+      path: "./fonts/NeueMontreal-Bold.woff",
       weight: "700",
       style: "normal",
     },
     {
-      path: "./fonts/NeueMontreal-BoldItalic.otf",
+      path: "./fonts/NeueMontreal-BoldItalic.woff",
       weight: "700",
       style: "italic",
     },
