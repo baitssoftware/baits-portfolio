@@ -4,10 +4,10 @@ import { useState } from "react";
 const Navbar = () => {
   const [isActive, setIsActive] = useState(false);
   return (
-    <header className="px-16 py-6 border-b">
+    <header className="px-16 py-6 ">
       <div className="flex items-center justify-between">
         <div className="">
-          <h1 className="text-lg tracking-tight">
+          <h1 className="text-xl tracking-tight">
             Bangladesh Associate of IT Solution
           </h1>
         </div>
