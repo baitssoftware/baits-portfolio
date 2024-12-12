@@ -57,7 +57,7 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        helvetica: ["var(--font-dm-sans)"],
+        helvetica: ["var(--font-anek-bangla)"],
       },
     },
   },
