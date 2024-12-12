@@ -7,7 +7,8 @@ const Hero = () => {
         <h1 className="text-9xl font-bold text- up tracking-tighter ">
           Designing Digital <br />
           Experiences that <br />
-          <span className="underline underline-offset-1 ">WOW!</span>
+          WOW
+          {/* <span className="underline underline-offset-1 ">WOW!</span> */}
         </h1>
       </div>
       <div className="flex items-center justify-between text-xl font-normal py-4">
