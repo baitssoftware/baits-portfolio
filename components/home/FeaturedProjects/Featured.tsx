@@ -37,7 +37,7 @@ const Featured = () => {
         {projects.map((project, index) => (
           <div
             key={index}
-            className="col-span-2 md:col-span-1 overflow-hidden group mt-6 transition-all duration-300 ease-in-out hover:scale-95"
+            className="col-span-2 md:col-span-1 overflow-hidden  mt-6"
           >
             <a
               href={project.link}
@@ -46,15 +46,20 @@ const Featured = () => {
               className="block"
             >
               <h2 className="text-2xl pb-6 uppercase">• {project.name}</h2>
-              <div className="relative overflow-hidden">
-                <div className="transform transition-all duration-300 ease-in-out group-hover:scale-110">
-                  <Image
-                    src={project.image}
-                    alt={project.name}
-                    width={500}
-                    height={300}
-                    className="w-full h-full object-cover"
-                  />
+              <div
+                key={index}
+                className=" group transition-all duration-300 ease-in-out hover:scale-95"
+              >
+                <div className="relative overflow-hidden">
+                  <div className="transform transition-all duration-300 ease-in-out group-hover:scale-110">
+                    <Image
+                      src={project.image}
+                      alt={project.name}
+                      width={500}
+                      height={300}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                 </div>
               </div>
               <div className="pt-6 pb-2">
