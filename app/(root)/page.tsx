@@ -2,6 +2,7 @@ import OurApproach from "@/components/home/approach/OurApproach";
 import Hero from "@/components/home/banner/Hero";
 import Featured from "@/components/home/FeaturedProjects/Featured";
 import MarqueeText from "@/components/home/marquee/MarqueeText";
+import ClientsReviews from "@/components/home/review/ClientsReviews";
 
 const page = () => {
   return (
@@ -10,6 +11,7 @@ const page = () => {
       <MarqueeText />
       <OurApproach />
       <Featured />
+      <ClientsReviews />
     </div>
   );
 };

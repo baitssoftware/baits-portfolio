@@ -49,9 +49,9 @@ const OurApproach = () => {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="#fff"
-                stroke-width="14"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="14"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 className="lucide lucide-dot"
               >
                 <circle cx="12.1" cy="12.1" r="1" />
