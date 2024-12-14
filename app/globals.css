@@ -5,6 +5,9 @@
 :root {
   --font-anek-bangla: "Anek Bangla", sans-serif;
 }
+* {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: var(--font-anek-bangla);
