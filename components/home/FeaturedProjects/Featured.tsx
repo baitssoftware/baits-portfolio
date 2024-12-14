@@ -30,7 +30,7 @@ const Featured = () => {
 
   return (
     <div className="">
-      <h2 className="text-7xl pt-20 py-16 px-16 border-b border-black/45">
+      <h2 className="text-7xl pt-20 py-16 px-16 border-b border-black/15">
         Featured Projects
       </h2>
       <div className="grid grid-cols-2 gap-6 px-16 py-16">
@@ -66,7 +66,7 @@ const Featured = () => {
                 {project.tags.map((tag, idx) => (
                   <span
                     key={idx}
-                    className="px-4 py-2 text-lg rounded-full border me-1.5 uppercase"
+                    className="px-4 py-2 text-lg rounded-full border border-black/15 me-1.5 uppercase"
                   >
                     {tag}
                   </span>

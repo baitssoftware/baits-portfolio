@@ -4,14 +4,14 @@ import Link from "next/link";
 const OurApproach = () => {
   return (
     <div className="bg-[#CDEA68]  ">
-      <div className="py-28 px-16 border-b border-black/45">
+      <div className="py-28 px-16 border-b border-black/15">
         <h2 className="text-7xl w-11/12">
           Bangladesh Associate of IT Solution is a strategic presentation agency
           for forward-thinking businesses that need to raise funds, sell
           prod­ucts, ex­plain com­plex ideas, and hire great peo­ple.
         </h2>
       </div>
-      <div className="grid grid-cols-8 pb-28 pt-6 px-16 border-b border-black/45 gap-28 text-2xl">
+      <div className="grid grid-cols-8 pb-28 pt-6 px-16 border-b border-black/15 gap-28 text-2xl">
         <div className="col-span-4">
           <p className="">What you can expect:</p>
         </div>
