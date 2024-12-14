@@ -28,11 +28,27 @@ const OurApproach = () => {
         </div>
         <div className="col-span-2 flex flex-col justify-end">
           <p className=" pb-4">S:</p>
-          <p className=" flex flex-col">
-            <Link href={"/"}>Instagram</Link>
-            <Link href={"/"}>Behance</Link>
-            <Link href={"/"}>Facebook</Link>
-            <Link href={"/"}>Linkedin</Link>{" "}
+          <p className=" flex flex-col gap-0.5">
+            <span>
+              <Link className="hover-underline-animation" href={"/"}>
+                Instagram
+              </Link>
+            </span>
+            <span>
+              <Link className="hover-underline-animation" href={"/"}>
+                Behance
+              </Link>
+            </span>
+            <span>
+              <Link className="hover-underline-animation" href={"/"}>
+                Facebook
+              </Link>
+            </span>
+            <span>
+              <Link className="hover-underline-animation" href={"/"}>
+                Linkedin
+              </Link>{" "}
+            </span>
           </p>
         </div>
       </div>

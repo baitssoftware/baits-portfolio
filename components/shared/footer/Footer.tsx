@@ -8,7 +8,7 @@ const Footer = () => {
     >
       <div className="relative h-[calc(100vh+105vh)] -top-[100vh]">
         <div className="h-[105vh] sticky top-[calc(100vh-105vh)]">
-          <footer className="px-16  grid grid-cols-2 pt-20 pb-14 gap-10">
+          <footer className="px-16  grid grid-cols-2 pt-24 pb-14 gap-10">
             <div className="col-span-1 flex flex-col justify-between">
               <h2 className="text-[10rem] leading-[8rem] tracking-tighter uppercase font-bold">
                 eye- opening
@@ -25,35 +25,75 @@ const Footer = () => {
                 <div className="col-span-3 flex flex-col justify-end">
                   <p className=" pb-4">S:</p>
                   <p className=" flex flex-col gap-0.5">
-                    <Link href={"/"}>Instagram</Link>
-                    <Link href={"/"}>Behance</Link>
-                    <Link href={"/"}>Facebook</Link>
-                    <Link href={"/"}>Linkedin</Link>{" "}
+                    <span>
+                      <Link className="hover-underline-animation" href={"/"}>
+                        Instagram
+                      </Link>
+                    </span>
+                    <span>
+                      <Link className="hover-underline-animation" href={"/"}>
+                        Behance
+                      </Link>
+                    </span>
+                    <span>
+                      <Link className="hover-underline-animation" href={"/"}>
+                        Facebook
+                      </Link>
+                    </span>
+                    <span>
+                      <Link className="hover-underline-animation" href={"/"}>
+                        Linkedin
+                      </Link>{" "}
+                    </span>
                   </p>
                 </div>
-                <div className="col-span-1 flex flex-col justify-end">
+                <div className="col-span-1 ">
                   <p className=" pb-4">L:</p>
-                  <p className=" flex flex-col gap-6">
+                  <div className=" space-y-6 ">
                     <p className="">202-1965 W 4th Ave Vancouver, Canada</p>
 
                     <div className="">30 Chukarina St Lviv, Bangladesh</div>
-                  </p>
+                  </div>
                 </div>
                 <div className="col-span-1"></div>
                 <div className="col-span-1 flex flex-col justify-end">
                   <p className=" pb-4">M:</p>
                   <p className=" flex flex-col  gap-0.5">
-                    <Link href={"/"}>Home</Link>
-                    <Link href={"/"}>About Us</Link>
-                    <Link href={"/"}>Contact</Link>
-                    <Link href={"/"}>Services</Link>
-                    <Link href={"/"}>Blogs</Link>{" "}
-                    <Link href={"/"}>Our Works</Link>{" "}
+                    <span>
+                      <Link className="hover-underline-animation" href={"/"}>
+                        Home
+                      </Link>
+                    </span>
+                    <span>
+                      <Link className="hover-underline-animation" href={"/"}>
+                        About Us
+                      </Link>
+                    </span>
+                    <span>
+                      <Link className="hover-underline-animation" href={"/"}>
+                        Contact
+                      </Link>
+                    </span>
+                    <span>
+                      <Link className="hover-underline-animation" href={"/"}>
+                        Services
+                      </Link>
+                    </span>
+                    <span>
+                      <Link className="hover-underline-animation" href={"/"}>
+                        Blogs
+                      </Link>{" "}
+                    </span>
+                    <span>
+                      <Link className="hover-underline-animation" href={"/"}>
+                        Our Works
+                      </Link>{" "}
+                    </span>
                   </p>
                 </div>
-                <div className="col-span-3 flex flex-col justify-end">
+                <div className="col-span-3 ">
                   <p className=" pb-4">E:</p>
-                  <p className=" flex flex-col  gap-0.5">hello@baits.com</p>
+                  <p className="  hover-underline-animation">hello@baits.com</p>
                 </div>
                 <div className="col-span-3 flex flex-col justify-end">
                   <p className=" flex flex-col  gap-0.5">

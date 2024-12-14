@@ -135,6 +135,39 @@ body {
   top: 0;
 }
 
+/* UNDERLINE EFFECT  */
+
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+}
+
+.hover-underline-animation::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #000000;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+  transform: scaleX(1);
+}
+
+.hover-underline-animation::after {
+  transform-origin: bottom right;
+}
+
+.hover-underline-animation:hover::after {
+  transform-origin: bottom left;
+}
+
+/* SCROLL BAR STYLE  */
+
 /* width */
 ::-webkit-scrollbar {
   width: 4px;
