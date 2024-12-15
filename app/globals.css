@@ -5,7 +5,10 @@
 :root {
   --font-anek-bangla: "Anek Bangla", sans-serif;
 }
-* {
+html {
+  scroll-behavior: smooth;
+}
+.scrollable {
   scroll-behavior: smooth;
 }
 
