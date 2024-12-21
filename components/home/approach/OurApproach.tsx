@@ -1,5 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+
+import AnimatedButton from "@/components/shared/button/AnimatedButton";
 
 const OurApproach = () => {
   return (
@@ -55,25 +59,19 @@ const OurApproach = () => {
       <div className="grid grid-cols-2 gap-4 px-16 py-10">
         <div className="">
           <p className="text-7xl">Our approach:</p>
-          <button className="mt-8 px-8 py-4 bg-[#212121] flex items-center justify-center gap-4 rounded-full uppercase text-white text-xl">
-            <p>Read More</p>{" "}
-            <span className="">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#fff"
-                strokeWidth="14"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="lucide lucide-dot"
-              >
-                <circle cx="12.1" cy="12.1" r="1" />
-              </svg>
-            </span>
-          </button>
+          <div className="mt-4">
+            <AnimatedButton text="Read More" href="/about" />
+          </div>
+          {/* <AnimatedButton
+              text="Contact Us"
+              href="/contact"
+              className="bg-blue-600"
+            /> */}
+          {/* <button className="mt-8">
+            <RoundedButton className="px-8 py-4 gap-4 rounded-full uppercase text-white text-xl bg-[#313131] border-none">
+              <p className="inline-block">Read More</p>
+            </RoundedButton>
+          </button> */}
         </div>
         <div className="">
           <Image

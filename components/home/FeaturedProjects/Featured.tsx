@@ -1,3 +1,4 @@
+import AnimatedButton from "@/components/shared/button/AnimatedButton";
 import RoundedButton from "@/components/shared/button/RoundedButton";
 import Image from "next/image";
 
@@ -78,26 +79,8 @@ const Featured = () => {
           </div>
         ))}
       </div>
-      <div className="text-center mx-auto flex items-center justify-center pb-24">
-        <button className="mt-8 px-8 py-5 bg-[#212121] flex items-center justify-center gap-4 rounded-full uppercase text-white text-xl hover:bg-[#333333] transition-colors duration-300">
-          <p>View all case studies</p>{" "}
-          <span className="">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#fff"
-              strokeWidth="14"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="lucide lucide-dot"
-            >
-              <circle cx="12.1" cy="12.1" r="1" />
-            </svg>
-          </span>
-        </button>
+      <div className="mt-4 text-center mx-auto flex items-center justify-center pb-24">
+        <AnimatedButton text="View all case studies" href="/projects" />
       </div>
     </div>
   );

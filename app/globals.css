@@ -12,6 +12,22 @@ html {
   scroll-behavior: smooth;
 }
 
+html,
+body {
+  height: 100%;
+  overflow: hidden; /* Prevent default browser scroll */
+}
+
+[data-scroll-container] {
+  position: relative;
+}
+
+[data-scroll-section] {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
 body {
   font-family: var(--font-anek-bangla);
   background-color: #f1f1f1;

@@ -27,12 +27,12 @@ export default function RoundedButton({
     timeline.current
       .to(
         circle.current,
-        { top: "-25%", width: "150%", duration: 0.5, ease: "power3.in" },
+        { top: "-25%", width: "150%", duration: 0.4, ease: "power3.in" },
         "enter"
       )
       .to(
         circle.current,
-        { top: "-150%", width: "125%", duration: 0.5 },
+        { top: "-150%", width: "125%", duration: 0.25 },
         "exit"
       );
   }, []);
