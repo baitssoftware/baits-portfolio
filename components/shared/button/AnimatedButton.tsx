@@ -5,6 +5,7 @@ import { ArrowUpRight } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
 import RoundedButton from "./RoundedButton";
+import { cn } from "@/lib/utils";
 
 interface AnimatedButtonProps {
   text: string;
@@ -22,7 +23,10 @@ export default function AnimatedButton({
   return (
     <Link href={href} passHref>
       <button
-        className={`group relative bg-[#313131] rounded-full text-white uppercase text-xl border-none ${className}`}
+        className={cn(
+          `group relative bg-[#313131] rounded-full text-white uppercase text-xl `,
+          className
+        )}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >

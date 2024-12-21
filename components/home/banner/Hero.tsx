@@ -4,11 +4,10 @@ const Hero = () => {
   return (
     <div className="px-16 ">
       <div className="py-32 border-b border-black/15">
-        <h1 className="text-9xl font-bold text- up tracking-tight ">
+        <h1 className="text-9xl uppercase font-bold text- up tracking-tight ">
           Designing Digital <br />
           Experiences that <br />
           WOW
-          {/* <span className="underline underline-offset-1 ">WOW!</span> */}
         </h1>
       </div>
       <div className="flex items-center justify-between text-xl font-normal py-4">

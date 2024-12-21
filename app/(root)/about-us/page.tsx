@@ -1,5 +1,13 @@
+import AboutUs from "./components/AboutUs";
+import Hero from "./components/Hero";
+
 const page = () => {
-  return <div>About</div>;
+  return (
+    <>
+      <Hero />
+      <AboutUs />
+    </>
+  );
 };
 
 export default page;

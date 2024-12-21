@@ -9,7 +9,7 @@ const page = () => {
   return (
     <div className="">
       <Hero />
-      <MarqueeText />
+      <MarqueeText text={"WE are baits."} />
       <OurApproach />
       <Featured />
       <ClientsReviews />

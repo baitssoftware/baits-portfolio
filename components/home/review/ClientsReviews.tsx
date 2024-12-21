@@ -8,6 +8,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import Image from "next/image";
+import RoundedButton from "@/components/shared/button/RoundedButton";
 
 const ClientsReviews = () => {
   const [openItem, setOpenItem] = useState("item-0");
@@ -117,9 +118,11 @@ const ClientsReviews = () => {
                   <h2 className="uppercase col-span-1">
                     {review.services.map((service, idx) => (
                       <div className="pb-2" key={idx}>
-                        <p className="px-3 py-1 text-xl rounded-full border me-1.5 uppercase inline-block border-black/70 font-medium">
-                          {service}
-                        </p>
+                        <div className=" inline-block">
+                          <RoundedButton className="px-3 py-1 text-xl rounded-full border me-1.5 uppercase  border-black/70 font-medium">
+                            {service}
+                          </RoundedButton>
+                        </div>
                       </div>
                     ))}
                   </h2>

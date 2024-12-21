@@ -1,11 +1,13 @@
 "use client";
 import { AnimatePresence, motion } from "framer-motion";
-
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useState } from "react";
 import Link from "next/link";
 import { DialogTitle } from "@radix-ui/react-dialog";
 
+interface platform {
+  platform: string;
+}
 const Navbar = () => {
   const [isActive, setIsActive] = useState(false);
   const navItems = [
@@ -16,11 +18,20 @@ const Navbar = () => {
     { label: "Account", href: "/account" },
     { label: "Log In", href: "/login" },
   ];
+  const menuLinks = [
+    { name: "Home", href: "/" },
+    { name: "About Us", href: "/about-us" },
+    { name: "Contact", href: "/contact" },
+    { name: "Services", href: "/services" },
+    { name: "Blogs", href: "/blogs" },
+    { name: "Our Works", href: "/projects" },
+  ];
+
   return (
-    <header className="px-16 py-6 ">
+    <header className="px-16 py-6">
       <Sheet onOpenChange={(open) => setIsActive(open)}>
         <div className="flex items-center justify-between">
-          <div className="">
+          <div>
             <Link href={"/"}>
               <h1 className="text-xl tracking-tight">
                 Bangladesh Associate of IT Solution
@@ -28,7 +39,7 @@ const Navbar = () => {
             </Link>
           </div>
 
-          <div className="">
+          <div>
             <SheetTrigger>
               <div className="button z-30">
                 <div
@@ -37,7 +48,11 @@ const Navbar = () => {
               </div>
             </SheetTrigger>
           </div>
-          <SheetContent side="top" className="h-[80vh] pt-16 p-0">
+
+          <SheetContent
+            side="top"
+            className="h-[80vh] pt-16 p-0 overflow-hidden"
+          >
             <DialogTitle></DialogTitle>
             <AnimatePresence>
               {isActive && (
@@ -47,205 +62,49 @@ const Navbar = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -50 }}
                     transition={{ duration: 0.3 }}
-                    className=" p-10 shadow-xl overflow-hidden "
+                    className="p-10 shadow-xl overflow-hidden"
                   >
                     <h1 className="text-2xl tracking-tight">
                       Bangladesh Associate of IT Solution
                     </h1>
                     <div className="grid grid-cols-3">
                       <div className="col-span-1 col-start-3 min-h-[45vh] text-2xl flex flex-col justify-between">
-                        <div className="">
-                          <p className=" pb-4">M:</p>
-                          <p className=" flex flex-col  gap-0.5">
-                            <span>
-                              <Link
-                                className="hover-underline-animation"
-                                href={"/"}
-                              >
-                                Home
-                              </Link>
-                            </span>
-                            <span>
-                              <Link
-                                className="hover-underline-animation"
-                                href={"/"}
-                              >
-                                About Us
-                              </Link>
-                            </span>
-                            <span>
-                              <Link
-                                className="hover-underline-animation"
-                                href={"/"}
-                              >
-                                Contact
-                              </Link>
-                            </span>
-                            <span>
-                              <Link
-                                className="hover-underline-animation"
-                                href={"/"}
-                              >
-                                Services
-                              </Link>
-                            </span>
-                            <span>
-                              <Link
-                                className="hover-underline-animation"
-                                href={"/"}
-                              >
-                                Blogs
-                              </Link>{" "}
-                            </span>
-                            <span>
-                              <Link
-                                className="hover-underline-animation"
-                                href={"/"}
-                              >
-                                Our Works
-                              </Link>{" "}
-                            </span>
+                        <div>
+                          <p className="pb-4">M:</p>
+                          <p className="flex flex-col gap-0.5">
+                            {menuLinks.map((link, index) => (
+                              <span key={index}>
+                                <Link
+                                  className="hover-underline-animation"
+                                  href={link.href}
+                                >
+                                  {link.name}
+                                </Link>
+                              </span>
+                            ))}
                           </p>
                         </div>
                         <div className="flex items-center gap-2">
-                          <button className="">
-                            <a
-                              className="bg-black p-2 rounded-full inline-block"
-                              href={"/"}
-                            >
-                              <svg
-                                width="20px"
-                                height="20px"
-                                viewBox="-5 0 20 20"
-                                version="1.1"
-                                xmlns="http://www.w3.org/2000/svg"
-                                xmlnsXlink="http://www.w3.org/1999/xlink"
-                                fill="#ffffff"
-                                stroke="#ffffff"
-                              >
-                                <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-                                <g
-                                  id="SVGRepo_tracerCarrier"
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                ></g>
-                                <g id="SVGRepo_iconCarrier">
-                                  <title>facebook [#ffffff]</title>
-                                  <desc>Created with Sketch.</desc>
-                                  <defs></defs>
-                                  <g
-                                    id="Page-1"
-                                    stroke="none"
-                                    strokeWidth="1"
-                                    fill="none"
-                                    fillRule="evenodd"
-                                  >
-                                    <g
-                                      id="Dribbble-Light-Preview"
-                                      transform="translate(-385.000000, -7399.000000)"
-                                      fill="#ffffff"
-                                    >
-                                      <g
-                                        id="icons"
-                                        transform="translate(56.000000, 160.000000)"
-                                      >
-                                        <path
-                                          d="M335.821282,7259 L335.821282,7250 L338.553693,7250 L339,7246 L335.821282,7246 L335.821282,7244.052 C335.821282,7243.022 335.847593,7242 337.286884,7242 L338.744689,7242 L338.744689,7239.14 C338.744689,7239.097 337.492497,7239 336.225687,7239 C333.580004,7239 331.923407,7240.657 331.923407,7243.7 L331.923407,7246 L329,7246 L329,7250 L331.923407,7250 L331.923407,7259 L335.821282,7259 Z"
-                                          id="facebook-[#ffffff]"
-                                        ></path>
-                                      </g>
-                                    </g>
-                                  </g>
-                                </g>
-                              </svg>
-                            </a>
-                          </button>
-                          <button className="">
-                            <a
-                              className="bg-black p-2 rounded-full inline-block"
-                              href={"/"}
-                            >
-                              <svg
-                                fill="#ffffff"
-                                version="1.1"
-                                xmlns="http://www.w3.org/2000/svg"
-                                xmlnsXlink="http://www.w3.org/1999/xlink"
-                                width="20px"
-                                height="20px"
-                                viewBox="0 0 512 512"
-                                xmlSpace="preserve"
-                                stroke="#ffffff"
-                              >
-                                <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-                                <g
-                                  id="SVGRepo_tracerCarrier"
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                ></g>
-                                <g id="SVGRepo_iconCarrier">
-                                  <g id="7935ec95c421cee6d86eb22ecd125aef">
-                                    <path
-                                      style={{
-                                        display: "inline",
-                                        fillRule: "evenodd",
-                                        clipRule: "evenodd",
-                                      }}
-                                      d="M116.504,500.219V170.654H6.975v329.564H116.504 L116.504,500.219z M61.751,125.674c38.183,0,61.968-25.328,61.968-56.953c-0.722-32.328-23.785-56.941-61.252-56.941 C24.994,11.781,0.5,36.394,0.5,68.722c0,31.625,23.772,56.953,60.53,56.953H61.751L61.751,125.674z M177.124,500.219 c0,0,1.437-298.643,0-329.564H286.67v47.794h-0.727c14.404-22.49,40.354-55.533,99.44-55.533 c72.085,0,126.116,47.103,126.116,148.333v188.971H401.971V323.912c0-44.301-15.848-74.531-55.497-74.531 c-30.254,0-48.284,20.38-56.202,40.08c-2.897,7.012-3.602,16.861-3.602,26.711v184.047H177.124L177.124,500.219z"
-                                    ></path>
-                                  </g>
-                                </g>
-                              </svg>
-                            </a>
-                          </button>
-                          <button className="">
-                            <a
-                              className="bg-black p-2 rounded-full inline-block"
-                              href={"/"}
-                            >
-                              <svg
-                                width="20px"
-                                height="20px"
-                                viewBox="0 0 192 192"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                              >
-                                <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-                                <g
-                                  id="SVGRepo_tracerCarrier"
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                ></g>
-                                <g id="SVGRepo_iconCarrier">
-                                  <path
-                                    stroke="#ffffff"
-                                    strokeWidth="12"
-                                    d="M96 162c-14.152 0-24.336-.007-32.276-.777-7.849-.761-12.87-2.223-16.877-4.741a36 36 0 0 1-11.33-11.329c-2.517-4.007-3.98-9.028-4.74-16.877C30.007 120.336 30 110.152 30 96c0-14.152.007-24.336.777-32.276.76-7.849 2.223-12.87 4.74-16.877a36 36 0 0 1 11.33-11.33c4.007-2.517 9.028-3.98 16.877-4.74C71.663 30.007 81.847 30 96 30c14.152 0 24.336.007 32.276.777 7.849.76 12.87 2.223 16.877 4.74a36 36 0 0 1 11.329 11.33c2.518 4.007 3.98 9.028 4.741 16.877.77 7.94.777 18.124.777 32.276 0 14.152-.007 24.336-.777 32.276-.761 7.849-2.223 12.87-4.741 16.877a36 36 0 0 1-11.329 11.329c-4.007 2.518-9.028 3.98-16.877 4.741-7.94.77-18.124.777-32.276.777Z"
-                                  ></path>
-                                  <circle
-                                    cx="96"
-                                    cy="96"
-                                    r="30"
-                                    stroke="#ffffff"
-                                    strokeWidth="12"
-                                  ></circle>
-                                  <circle
-                                    cx="135"
-                                    cy="57"
-                                    r="9"
-                                    fill="#ffffff"
-                                  ></circle>
-                                </g>
-                              </svg>
-                            </a>
-                          </button>
+                          {["facebook", "linkedin", "instagram"].map(
+                            (platform, index) => (
+                              <button key={index}>
+                                <a
+                                  className="bg-black p-2 rounded-full inline-block"
+                                  href={"/"}
+                                >
+                                  <Icon platform={platform} />
+                                </a>
+                              </button>
+                            )
+                          )}
                         </div>
                       </div>
                     </div>
                   </motion.div>
 
-                  <motion.div className=" p-10 overflow-hidden ">
+                  <motion.div className="p-10 overflow-hidden">
                     <div className="grid grid-cols-3">
-                      <h3 className="text-[20rem] leading-[4rem] font-semibold mb-10 ">
+                      <h3 className="text-[20rem] leading-[4rem] font-semibold mb-10">
                         ©2024
                       </h3>
                       <motion.div
@@ -256,7 +115,7 @@ const Navbar = () => {
                         className="col-span-1 col-start-3 flex gap-10"
                       >
                         <nav>
-                          <ul className="flex flex-col text-xl ">
+                          <ul className="flex flex-col text-xl">
                             {navItems.slice(0, 4).map((item, index) => (
                               <li key={index}>
                                 <Link
@@ -270,19 +129,17 @@ const Navbar = () => {
                           </ul>
                         </nav>
                         <nav>
-                          <ul className="flex flex-col text-xl ">
-                            {navItems
-                              .slice(4, navItems.length)
-                              .map((item, index) => (
-                                <li key={index}>
-                                  <Link
-                                    className="hover-underline-animation"
-                                    href={item.href}
-                                  >
-                                    {item.label}
-                                  </Link>
-                                </li>
-                              ))}
+                          <ul className="flex flex-col text-xl">
+                            {navItems.slice(4).map((item, index) => (
+                              <li key={index}>
+                                <Link
+                                  className="hover-underline-animation"
+                                  href={item.href}
+                                >
+                                  {item.label}
+                                </Link>
+                              </li>
+                            ))}
                           </ul>
                         </nav>
                       </motion.div>
@@ -296,6 +153,103 @@ const Navbar = () => {
       </Sheet>
     </header>
   );
+};
+
+const Icon = ({ platform }: platform) => {
+  switch (platform) {
+    case "facebook":
+      return (
+        <svg
+          width="20px"
+          height="20px"
+          viewBox="-5 0 20 20"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlnsXlink="http://www.w3.org/1999/xlink"
+          fill="#ffffff"
+          stroke="#ffffff"
+        >
+          <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+          <g
+            id="SVGRepo_tracerCarrier"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          ></g>
+          <g id="SVGRepo_iconCarrier">
+            <title>facebook [#ffffff]</title>
+            <desc>Created with Sketch.</desc>
+            <defs></defs>
+            <g
+              id="Page-1"
+              stroke="none"
+              strokeWidth="1"
+              fill="none"
+              fillRule="evenodd"
+            >
+              <g
+                id="Dribbble-Light-Preview"
+                transform="translate(-385.000000, -7399.000000)"
+                fill="#ffffff"
+              >
+                <g id="icons" transform="translate(56.000000, 160.000000)">
+                  <path
+                    d="M335.821282,7259 L335.821282,7250 L338.553693,7250 L339,7246 L335.821282,7246 L335.821282,7244.052 C335.821282,7243.022 335.847593,7242 337.286884,7242 L338.744689,7242 L338.744689,7239.14 C338.744689,7239.097 337.492497,7239 336.225687,7239 C333.580004,7239 331.923407,7240.657 331.923407,7243.7 L331.923407,7246 L329,7246 L329,7250 L331.923407,7250 L331.923407,7259 L335.821282,7259 Z"
+                    id="facebook-[#ffffff]"
+                  ></path>
+                </g>
+              </g>
+            </g>
+          </g>
+        </svg>
+      );
+    case "linkedin":
+      return (
+        <svg
+          fill="#ffffff"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          width="20px"
+          height="20px"
+          viewBox="0 0 512 512"
+        >
+          <path d="M116.504,500.219V170.654H6.975v329.564H116.504 L116.504,500.219z M61.751,125.674c38.183,0,61.968-25.328,61.968-56.953c-0.722-32.328-23.785-56.941-61.252-56.941 C24.994,11.781,0.5,36.394,0.5,68.722c0,31.625,23.772,56.953,60.53,56.953H61.751L61.751,125.674z M177.124,500.219 c0,0,1.437-298.643,0-329.564H286.67v47.794h-0.727c14.404-22.49,40.354-55.533,99.44-55.533 c72.085,0,126.116,47.103,126.116,148.333v188.971H401.971V323.912c0-44.301-15.848-74.531-55.497-74.531 c-30.254,0-48.284,20.38-56.202,40.08c-2.897,7.012-3.602,16.861-3.602,26.711v184.047H177.124L177.124,500.219z" />
+        </svg>
+      );
+    case "instagram":
+      return (
+        <svg
+          width="20px"
+          height="20px"
+          viewBox="0 0 192 192"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+        >
+          <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+          <g
+            id="SVGRepo_tracerCarrier"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          ></g>
+          <g id="SVGRepo_iconCarrier">
+            <path
+              stroke="#ffffff"
+              strokeWidth="12"
+              d="M96 162c-14.152 0-24.336-.007-32.276-.777-7.849-.761-12.87-2.223-16.877-4.741a36 36 0 0 1-11.33-11.329c-2.517-4.007-3.98-9.028-4.74-16.877C30.007 120.336 30 110.152 30 96c0-14.152.007-24.336.777-32.276.76-7.849 2.223-12.87 4.74-16.877a36 36 0 0 1 11.33-11.33c4.007-2.517 9.028-3.98 16.877-4.74C71.663 30.007 81.847 30 96 30c14.152 0 24.336.007 32.276.777 7.849.76 12.87 2.223 16.877 4.74a36 36 0 0 1 11.329 11.33c2.518 4.007 3.98 9.028 4.741 16.877.77 7.94.777 18.124.777 32.276 0 14.152-.007 24.336-.777 32.276-.761 7.849-2.223 12.87-4.741 16.877a36 36 0 0 1-11.329 11.329c-4.007 2.518-9.028 3.98-16.877 4.741-7.94.77-18.124.777-32.276.777Z"
+            ></path>
+            <circle
+              cx="96"
+              cy="96"
+              r="30"
+              stroke="#ffffff"
+              strokeWidth="12"
+            ></circle>
+            <circle cx="135" cy="57" r="9" fill="#ffffff"></circle>
+          </g>
+        </svg>
+      );
+    default:
+      return null;
+  }
 };
 
 export default Navbar;

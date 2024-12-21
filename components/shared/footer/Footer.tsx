@@ -1,14 +1,30 @@
 import Link from "next/link";
 
 const Footer = () => {
+  // Data arrays for mapping
+  const socialLinks = [
+    { name: "Instagram", href: "/" },
+    { name: "Behance", href: "/" },
+    { name: "Facebook", href: "/" },
+    { name: "Linkedin", href: "/" },
+  ];
+
+  const menuLinks = [
+    { name: "Home", href: "/" },
+    { name: "About Us", href: "/about-us" },
+    { name: "Contact", href: "/contact" },
+    { name: "Services", href: "/services" },
+    { name: "Blogs", href: "/blogs" },
+    { name: "Our Works", href: "/projects" },
+  ];
+
+  const locations = [
+    "202-1965 W 4th Ave Vancouver, Canada",
+    "30 Chukarina St Lviv, Bangladesh",
+  ];
+
   return (
-    // <div
-    //   className="relative h-[105vh]"
-    //   style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
-    // >
-    //   <div className="relative h-[calc(100vh+105vh)] -top-[100vh]">
-    //     <div className="h-[105vh] sticky top-[calc(100vh-105vh)]">
-    <footer className="px-16  grid grid-cols-2 pt-24 pb-14 gap-10">
+    <footer className="px-16 grid grid-cols-2 pt-24 pb-14 gap-10">
       <div className="col-span-1 flex flex-col justify-between">
         <h2 className="text-[10rem] leading-[8rem] tracking-tighter uppercase font-bold">
           eye- opening
@@ -22,90 +38,61 @@ const Footer = () => {
           awarding.
         </h2>
         <div className="grid grid-cols-3 gap-6 text-2xl gap-y-10 items-start pt-10">
+          {/* Social Links */}
           <div className="col-span-3 flex flex-col justify-end">
-            <p className=" pb-4">S:</p>
-            <p className=" flex flex-col gap-0.5">
-              <span>
-                <Link className="hover-underline-animation" href={"/"}>
-                  Instagram
-                </Link>
-              </span>
-              <span>
-                <Link className="hover-underline-animation" href={"/"}>
-                  Behance
-                </Link>
-              </span>
-              <span>
-                <Link className="hover-underline-animation" href={"/"}>
-                  Facebook
-                </Link>
-              </span>
-              <span>
-                <Link className="hover-underline-animation" href={"/"}>
-                  Linkedin
-                </Link>{" "}
-              </span>
-            </p>
-          </div>
-          <div className="col-span-1 ">
-            <p className=" pb-4">L:</p>
-            <div className=" space-y-6 ">
-              <p className="">202-1965 W 4th Ave Vancouver, Canada</p>
-
-              <div className="">30 Chukarina St Lviv, Bangladesh</div>
+            <p className="pb-4">S:</p>
+            <div className="flex flex-col gap-0.5">
+              {socialLinks.map((link, index) => (
+                <span key={index}>
+                  <Link className="hover-underline-animation" href={link.href}>
+                    {link.name}
+                  </Link>
+                </span>
+              ))}
             </div>
           </div>
+
+          {/* Locations */}
+          <div className="col-span-1">
+            <p className="pb-4">L:</p>
+            <div className="space-y-6">
+              {locations.map((location, index) => (
+                <p key={index}>{location}</p>
+              ))}
+            </div>
+          </div>
+
           <div className="col-span-1"></div>
+
+          {/* Menu Links */}
           <div className="col-span-1 flex flex-col justify-end">
-            <p className=" pb-4">M:</p>
-            <p className=" flex flex-col  gap-0.5">
-              <span>
-                <Link className="hover-underline-animation" href={"/"}>
-                  Home
-                </Link>
-              </span>
-              <span>
-                <Link className="hover-underline-animation" href={"/"}>
-                  About Us
-                </Link>
-              </span>
-              <span>
-                <Link className="hover-underline-animation" href={"/"}>
-                  Contact
-                </Link>
-              </span>
-              <span>
-                <Link className="hover-underline-animation" href={"/"}>
-                  Services
-                </Link>
-              </span>
-              <span>
-                <Link className="hover-underline-animation" href={"/"}>
-                  Blogs
-                </Link>{" "}
-              </span>
-              <span>
-                <Link className="hover-underline-animation" href={"/"}>
-                  Our Works
-                </Link>{" "}
-              </span>
-            </p>
+            <p className="pb-4">M:</p>
+            <div className="flex flex-col gap-0.5">
+              {menuLinks.map((link, index) => (
+                <span key={index}>
+                  <Link className="hover-underline-animation" href={link.href}>
+                    {link.name}
+                  </Link>
+                </span>
+              ))}
+            </div>
           </div>
-          <div className="col-span-3 ">
-            <p className=" pb-4">E:</p>
-            <p className="  hover-underline-animation">hello@baits.com</p>
+
+          {/* Email */}
+          <div className="col-span-3">
+            <p className="pb-4">E:</p>
+            <p className="hover-underline-animation">hello@baits.com</p>
           </div>
+
+          {/* Footer Legal */}
           <div className="col-span-3 flex flex-col justify-end">
-            <p className=" flex flex-col  gap-0.5">
+            <p className="flex flex-col gap-0.5">
               © BAITS design 2024. Legal Terms
             </p>
           </div>
         </div>
       </div>
     </footer>
-    //     </div>
-    //   </div>
-    // </div>
   );
 };
 
