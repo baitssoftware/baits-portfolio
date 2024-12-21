@@ -1,3 +1,4 @@
+import RoundedButton from "@/components/shared/button/RoundedButton";
 import Image from "next/image";
 
 const Featured = () => {
@@ -62,14 +63,15 @@ const Featured = () => {
                   </div>
                 </div>
               </div>
-              <div className="pt-6 pb-2">
+              <div className="pt-6 pb-2 flex">
                 {project.tags.map((tag, idx) => (
-                  <span
-                    key={idx}
+                  <RoundedButton
                     className="px-4 py-2 text-lg rounded-full border border-black/15 me-1.5 uppercase"
+                    key={idx}
                   >
+                    {" "}
                     {tag}
-                  </span>
+                  </RoundedButton>
                 ))}
               </div>
             </a>
