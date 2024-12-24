@@ -3,13 +3,17 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { DialogTitle } from "@radix-ui/react-dialog";
 
 interface platform {
   platform: string;
 }
+
 const Navbar = () => {
   const [isActive, setIsActive] = useState(false);
+  const router = useRouter();
+
   const navItems = [
     { label: "FAQs", href: "/faqs" },
     { label: "Trams & Conditions", href: "/eula" },
@@ -27,12 +31,22 @@ const Navbar = () => {
     { name: "Our Works", href: "/projects" },
   ];
 
+  const handleLinkClick = (href: string) => {
+    // Start closing the sheet
+    setIsActive(false);
+
+    // Delay the navigation to allow for a slow closure effect
+    setTimeout(() => {
+      router.push(href);
+    }, 500); // Adjust this value to control the delay before navigation
+  };
+
   return (
-    <header className="px-16 py-6">
-      <Sheet onOpenChange={(open) => setIsActive(open)}>
+    <header className="px-16 py-6 z-50">
+      <Sheet open={isActive} onOpenChange={(open) => setIsActive(open)}>
         <div className="flex items-center justify-between">
           <div>
-            <Link href={"/"}>
+            <Link href="/">
               <h1 className="text-xl tracking-tight">
                 Bangladesh Associate of IT Solution
               </h1>
@@ -61,7 +75,7 @@ const Navbar = () => {
                     initial={{ opacity: 0, y: -50 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -50 }}
-                    transition={{ duration: 0.3 }}
+                    transition={{ duration: 0.5 }} // Increased duration for slower animation
                     className="p-10 shadow-xl overflow-hidden"
                   >
                     <h1 className="text-2xl tracking-tight">
@@ -77,6 +91,10 @@ const Navbar = () => {
                                 <Link
                                   className="hover-underline-animation"
                                   href={link.href}
+                                  onClick={(e) => {
+                                    e.preventDefault();
+                                    handleLinkClick(link.href);
+                                  }}
                                 >
                                   {link.name}
                                 </Link>
@@ -90,7 +108,7 @@ const Navbar = () => {
                               <button key={index}>
                                 <a
                                   className="bg-black p-2 rounded-full inline-block"
-                                  href={"/"}
+                                  href="www.facebook.com"
                                 >
                                   <Icon platform={platform} />
                                 </a>
@@ -121,6 +139,10 @@ const Navbar = () => {
                                 <Link
                                   className="hover-underline-animation"
                                   href={item.href}
+                                  onClick={(e) => {
+                                    e.preventDefault();
+                                    handleLinkClick(item.href);
+                                  }}
                                 >
                                   {item.label}
                                 </Link>
@@ -135,6 +157,10 @@ const Navbar = () => {
                                 <Link
                                   className="hover-underline-animation"
                                   href={item.href}
+                                  onClick={(e) => {
+                                    e.preventDefault();
+                                    handleLinkClick(item.href);
+                                  }}
                                 >
                                   {item.label}
                                 </Link>
