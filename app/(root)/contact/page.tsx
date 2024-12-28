@@ -1,5 +1,13 @@
+import ContactForm from "./components/ContactForm";
+import Hero from "./components/Hero";
+
 const page = () => {
-  return <div>Hello</div>;
+  return (
+    <div>
+      <Hero />
+      <ContactForm />
+    </div>
+  );
 };
 
 export default page;
