@@ -3,6 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import Slider from "./Slider";
 import { slides } from "../data/sliderData";
 import { AnimatedText } from "@/components/shared/animatedText/AnimatedText";
+import Image from "next/image";
 
 const AboutUs = () => {
   const aboutText = [
@@ -38,6 +39,10 @@ const AboutUs = () => {
     "most recognizable & influential",
     "presentation agencies of the time",
     "who does that.",
+  ];
+  const twoPrinciples = [
+    "We save businesses from ugly",
+    "and ineffective presentations.",
   ];
   return (
     <div className="">
@@ -84,6 +89,42 @@ const AboutUs = () => {
       <div className=" mt-16">
         <MarqueeText text={"WE are baits."} />
         <Slider slides={slides} />
+      </div>
+      <div className=" border-b border-black/15 pb-16 pt-36">
+        <AnimatedText text={twoPrinciples} className="text-7xl w-7/12 px-16 " />
+      </div>
+      <div className="px-16 grid grid-cols-2 gap-6 text-2xl pb-16">
+        <div className="col-span-1">
+          <Image
+            height={500}
+            width={500}
+            className="w-full"
+            src={"/about-01.jpg"}
+            alt="about page image"
+          ></Image>
+          <h2 className=" w-6/12 pt-6">
+            Whether the presentation needs to convince or educate it always has
+            to change audience perception. We seek insights to make decks
+            unexpectedly enlightening for our audience.
+          </h2>
+        </div>
+        <div className="col-span-1">
+          <Image
+            height={500}
+            width={500}
+            className="w-full"
+            src={"/about-02.jpg"}
+            alt="about page image"
+          ></Image>
+          <h2 className="w-6/12 pt-6">
+            The presentation helps to see what&#39;s hidden, unseen, or simply
+            never known before. We use design to drive their attention, focus
+            them to clearly see, and help them feel the message.
+          </h2>
+        </div>
+      </div>
+      <div className=" border-b border-black/15 pb-16 pt-36">
+        <AnimatedText text={twoPrinciples} className="text-7xl w-7/12 px-16 " />
       </div>
     </div>
   );

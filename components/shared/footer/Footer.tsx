@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { AnimatedText } from "../animatedText/AnimatedText";
 
 const Footer = () => {
   // Data arrays for mapping
@@ -27,15 +28,24 @@ const Footer = () => {
     <footer className="px-16 grid grid-cols-2 pt-24 pb-14 gap-10">
       <div className="col-span-1 flex flex-col justify-between">
         <h2 className="text-[10rem] leading-[8rem] tracking-tighter uppercase font-bold">
-          eye- opening
+          <AnimatedText
+            text="eye- opening"
+            className="text-[10rem] leading-[8rem]"
+          />
         </h2>
-        <h1 className="text-2xl tracking-tight">
-          Bangladesh Associate of IT Solution
+        <h1 className="">
+          <AnimatedText
+            text="Bangladesh Associate of IT Solution"
+            className="text-2xl tracking-tight"
+          />
         </h1>
       </div>
       <div className="col-span-1 ">
         <h2 className="text-[10rem] leading-[8rem] tracking-tighter uppercase font-bold">
-          awarding.
+          <AnimatedText
+            text="awarding."
+            className="text-[10rem] leading-[8rem]"
+          />
         </h2>
         <div className="grid grid-cols-3 gap-6 text-2xl gap-y-10 items-start pt-10">
           {/* Social Links */}
@@ -57,7 +67,9 @@ const Footer = () => {
             <p className="pb-4">L:</p>
             <div className="space-y-6">
               {locations.map((location, index) => (
-                <p key={index}>{location}</p>
+                <div key={index}>
+                  <AnimatedText text={location} className="text-2xl" />
+                </div>
               ))}
             </div>
           </div>
@@ -66,7 +78,10 @@ const Footer = () => {
 
           {/* Menu Links */}
           <div className="col-span-1 flex flex-col justify-end">
-            <p className="pb-4">M:</p>
+            <div className="pb-4">
+              {" "}
+              <AnimatedText text={["M:"]} className="text-2xl" />
+            </div>
             <div className="flex flex-col gap-0.5">
               {menuLinks.map((link, index) => (
                 <span key={index}>
@@ -86,9 +101,12 @@ const Footer = () => {
 
           {/* Footer Legal */}
           <div className="col-span-3 flex flex-col justify-end">
-            <p className="flex flex-col gap-0.5">
-              © BAITS design 2024. Legal Terms
-            </p>
+            <div className="flex flex-col gap-0.5">
+              <AnimatedText
+                text="© BAITS design 2024. Legal Terms"
+                className="text-2xl"
+              />
+            </div>
           </div>
         </div>
       </div>
