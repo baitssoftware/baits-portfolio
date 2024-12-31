@@ -47,7 +47,7 @@ export default function ContactForm() {
 
   return (
     <motion.div
-      className="px-4 sm:px-8 md:px-16 space-y-4 max-w- mx-auto  tracking-tight"
+      className="px-4 sm:px-8 md:px-16 space-y-4 max-w- mx-auto pb-24 tracking-tight"
       initial="initial"
       animate="animate"
       variants={{

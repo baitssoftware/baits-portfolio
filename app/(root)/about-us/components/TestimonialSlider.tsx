@@ -15,7 +15,7 @@ export function TestimonialSlider() {
   useEffect(() => {
     if (sliderRef.current) {
       gsap.from(sliderRef.current.children, {
-        opacity: 0,
+        opacity: 1,
         y: 20,
         duration: 0.8,
         stagger: 0.2,
@@ -41,7 +41,7 @@ export function TestimonialSlider() {
         {testimonials.map((testimonial) => (
           <motion.div
             key={testimonial.id}
-            className="flex-shrink-0 w-[450px] p-8"
+            className="flex-shrink-0 w-[450px] p-8 opacity-100"
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.2 }}
           >

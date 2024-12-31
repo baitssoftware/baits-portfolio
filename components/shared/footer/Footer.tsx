@@ -20,8 +20,8 @@ const Footer = () => {
   ];
 
   const locations = [
-    "202-1965 W 4th Ave Vancouver, Canada",
-    "30 Chukarina St Lviv, Bangladesh",
+    "Alba Tower, 6th floor, 2/6 Pallabi, ",
+    "Dhaka, Bangladesh",
   ];
 
   return (
@@ -50,7 +50,7 @@ const Footer = () => {
         <div className="grid grid-cols-3 gap-6 text-2xl gap-y-10 items-start pt-10">
           {/* Social Links */}
           <div className="col-span-3 flex flex-col justify-end">
-            <p className="pb-4">S:</p>
+            <p className="pb-4">Social:</p>
             <div className="flex flex-col gap-0.5">
               {socialLinks.map((link, index) => (
                 <span key={index}>
@@ -64,7 +64,7 @@ const Footer = () => {
 
           {/* Locations */}
           <div className="col-span-1">
-            <p className="pb-4">L:</p>
+            <p className="pb-4">Location:</p>
             <div className="space-y-6">
               {locations.map((location, index) => (
                 <div key={index}>
@@ -80,7 +80,7 @@ const Footer = () => {
           <div className="col-span-1 flex flex-col justify-end">
             <div className="pb-4">
               {" "}
-              <AnimatedText text={["M:"]} className="text-2xl" />
+              <AnimatedText text={["Menu:"]} className="text-2xl" />
             </div>
             <div className="flex flex-col gap-0.5">
               {menuLinks.map((link, index) => (
@@ -95,8 +95,12 @@ const Footer = () => {
 
           {/* Email */}
           <div className="col-span-3">
-            <p className="pb-4">E:</p>
+            <p className="pb-4">Email:</p>
             <p className="hover-underline-animation">hello@baits.com</p>
+          </div>
+          <div className="col-span-3">
+            <p className="pb-4">Phone:</p>
+            <p className="hover-underline-animation">+88 01923 240700</p>
           </div>
 
           {/* Footer Legal */}

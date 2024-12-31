@@ -10,9 +10,10 @@ const OurApproach = () => {
     <div className="bg-[#CDEA68]  ">
       <div className="py-28 px-16 border-b border-black/15">
         <h2 className="text-7xl w-11/12">
-          Bangladesh Associate of IT Solution is a strategic presentation agency
-          for forward-thinking businesses that need to raise funds, sell
-          prod­ucts, ex­plain com­plex ideas, and hire great peo­ple.
+          Bangladesh Associate of IT Solution is your trusted partner for
+          comprehensive digital solutions. We specialize in creating tailored
+          websites, managing domains, and providing expert IT services to help
+          businesses grow in the digital world.
         </h2>
       </div>
       <div className="grid grid-cols-8 pb-28 pt-6 px-16 border-b border-black/15 gap-28 text-2xl">
@@ -21,13 +22,14 @@ const OurApproach = () => {
         </div>
         <div className="col-span-2">
           <p className=" pb-8">
-            We create tailored presentations to help you persuade your
-            colleagues, clients, or investors. Whether it’s live or digital,
-            delivered for one or a hundred people.
+            We provide customized development solutions to help your business
+            present ideas effectively to stakeholders, clients, or teams.
+            Whether it’s a small demo or a large-scale project, we ensure
+            quality and impact.
           </p>
           <p className="">
-            We believe the mix of strategy and design (with a bit of coffee) is
-            what makes your message clear, convincing, and captivating.
+            We believe that a combination of strategy and thoughtful design
+            makes your technology clear, effective, and engaging.
           </p>
         </div>
         <div className="col-span-2 flex flex-col justify-end">

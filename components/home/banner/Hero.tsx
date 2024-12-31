@@ -5,7 +5,7 @@ const Hero = () => {
     <div className="px-16 ">
       <div className="py-32 border-b border-black/15">
         <h1 className="text-9xl uppercase font-bold text- up tracking-tight ">
-          Designing Digital <br />
+          Developing Digital <br />
           Experiences that <br />
           WOW
         </h1>
@@ -24,7 +24,7 @@ const Hero = () => {
         </button>
       </div>
       <div className="text-center pt-10">
-        <p className="capitalize opacity-45">Scroll Down</p>
+        <p className="capitalize opacity-0">Scroll Down</p>
       </div>
     </div>
   );
