@@ -5,6 +5,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { DialogTitle } from "@radix-ui/react-dialog";
+import Image from "next/image";
 
 interface platform {
   platform: string;
@@ -46,10 +47,17 @@ const Navbar = () => {
       <Sheet open={isActive} onOpenChange={(open) => setIsActive(open)}>
         <div className="flex items-center justify-between">
           <div>
-            <Link href="/">
-              <h1 className="text-xl tracking-tight">
+            <Link href="/" className="">
+              {/* <h1 className="text-xl tracking-tight">
                 Bangladesh Associate of IT Solution
-              </h1>
+              </h1> */}
+              <Image
+                width={120}
+                height={200}
+                src={"/BAITS.svg"}
+                alt="baits logo"
+                className="h-7 "
+              ></Image>
             </Link>
           </div>
 

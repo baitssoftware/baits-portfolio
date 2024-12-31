@@ -8,8 +8,9 @@ const phrases = [
   "by the readable content of a page",
   "when looking at its layout.",
 ];
+import React from "react";
 
-export default function TestAnimationText() {
+const TestAnimationText = () => {
   return (
     <div className="flex flex-col items-center gap-[20vw]">
       <AnimatedText text={phrases} />
@@ -18,4 +19,5 @@ export default function TestAnimationText() {
       <AnimatedText text={phrases} className="text-blue-500" />
     </div>
   );
-}
+};
+export default TestAnimationText;

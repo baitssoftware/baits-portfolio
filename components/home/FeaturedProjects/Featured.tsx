@@ -5,7 +5,7 @@ import Image from "next/image";
 const Featured = () => {
   const projects = [
     {
-      name: "Portfolio Website",
+      name: "NEDUBD",
       tags: ["HTML", "CSS", "JavaScript", "Responsive Design"],
       link: "https://example.com/portfolio",
       image: "/p1.png",
@@ -14,13 +14,13 @@ const Featured = () => {
       name: "E-Commerce Store",
       tags: ["React", "Redux", "Node.js", "MongoDB"],
       link: "https://example.com/ecommerce",
-      image: "/p2.jpg",
+      image: "/p2.png",
     },
     {
       name: "Blog Platform",
       tags: ["Next.js", "GraphQL", "Apollo Client", "Prisma"],
       link: "https://example.com/blog-platform",
-      image: "/p3.jpg",
+      image: "/p3.png",
     },
     {
       name: "Task Manager",
