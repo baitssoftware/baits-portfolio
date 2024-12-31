@@ -16,7 +16,7 @@ const stats = [
 
 export default function StatsSection() {
   return (
-    <section className=" px-16 py-16 pb-0 border-b border-black/15">
+    <section className=" px-16 py-16 pb-0 ">
       <h2 className="text-7xl pt-20 py-16 border-b border-black/15">
         We Make your Business Bright
       </h2>
@@ -59,7 +59,7 @@ export default function StatsSection() {
               height={400}
               className="w-full object-cover"
             />
-            <div className="absolute bottom-4 right-[-20px] bg-white p-4 rounded-lg shadow-lg max-w-[280px]">
+            {/* <div className="absolute bottom-4 right-[-20px] bg-white p-4 rounded-lg shadow-lg max-w-[280px]">
               <div className="flex items-start gap-3">
                 <Image
                   src="/team.jpg"
@@ -83,7 +83,7 @@ export default function StatsSection() {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </motion.div>
           <div className="absolute right-[-40px] top-[40%] w-20 h-40 bg-orange-500/10 rounded-full blur-3xl" />
         </div>

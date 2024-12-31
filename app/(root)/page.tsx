@@ -1,5 +1,6 @@
 import OurApproach from "@/components/home/approach/OurApproach";
 import Hero from "@/components/home/banner/Hero";
+import BlogSection from "@/components/home/blogs/BlogSection";
 import ClientLogo from "@/components/home/clientLogo/ClientLogo";
 import Featured from "@/components/home/FeaturedProjects/Featured";
 import MarqueeText from "@/components/home/marquee/MarqueeText";
@@ -19,6 +20,7 @@ const page = () => {
       <ServiceSection />
       <Featured />
       <ClientsReviews />
+      <BlogSection />
       <StartProject />
     </div>
   );

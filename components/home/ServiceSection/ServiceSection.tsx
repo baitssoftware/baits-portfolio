@@ -78,10 +78,10 @@ const ServiceCard = ({
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.5 }}
-    className="bg-white p-6 rounded-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-blue-100"
+    className="bg-white p-6 hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-orange-100 h-full"
   >
-    <div className="mb-4 bg-blue-50 w-12 h-12 rounded-lg flex items-center justify-center">
-      <Icon className="w-6 h-6 text-blue-600" />
+    <div className="mb-4 bg-orange-50 w-12 h-12 flex items-center justify-center">
+      <Icon className="w-6 h-6 text-orange-600" />
     </div>
     <h3 className="text-xl font-semibold text-gray-900 mb-3">{title}</h3>
     <p className="text-gray-600 text-sm leading-relaxed">{description}</p>
@@ -90,26 +90,22 @@ const ServiceCard = ({
 
 const ServiceSection = () => {
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl">
+    <section className="py-20 pb-36 bg-white">
+      <div className="px-4 sm:px-6 lg:px-16">
+        <div className="">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="mb-16"
           >
-            <h2 className="text-sm font-semibold text-blue-600 uppercase tracking-wide mb-2">
-              WHAT WE DO
-            </h2>
-            <h3 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">
+            <h2 className="text-7xl pt-20 py-16 border-b border-black/15">
               Our Development Services
-            </h3>
-            <div className="w-20 h-1 bg-blue-600 rounded" />
+            </h2>
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {services.map((service, index) => (
             <motion.div
               key={index}

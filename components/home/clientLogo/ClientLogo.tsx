@@ -47,7 +47,7 @@ const ClientLogo = () => {
     "42.png",
     "43.jpg",
     "44.png",
-    "45.png",
+    "45.jpg",
     "46.jpg",
     "47.png",
     "48.png",

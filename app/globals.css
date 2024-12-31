@@ -97,6 +97,24 @@ body {
   }
 }
 
+@layer utilities {
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@font-face {
+  font-family: "FoundersGrotesk";
+  src: url("/fonts/FoundersGrotesk-Semibold.ttf") format("truetype");
+}
+
+.heading-text {
+  font-family: "FoundersGrotesk", sans-serif;
+}
 /* NAVBAR BUTTON  */
 .button {
   width: 65px;

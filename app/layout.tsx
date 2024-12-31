@@ -45,6 +45,11 @@ const anekBangla = localFont({
       weight: "800",
       style: "normal",
     },
+    {
+      path: "./fonts/FoundersGrotesk-Semibold.ttf",
+      weight: "700",
+      style: "normal",
+    },
   ],
   variable: "--font-anek-bangla",
 });
