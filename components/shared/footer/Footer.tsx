@@ -107,7 +107,7 @@ const Footer = () => {
                 height={40}
                 className="h-16 w-auto"
               /> */}
-              <h1 className="ml-3 text-3xl font-extralight  pe-10">
+              <h1 className="ml-3 text-3xl font- underline underline-offset-8   pe-10">
                 Bangladesh Associate of IT Solution
               </h1>
             </Link>

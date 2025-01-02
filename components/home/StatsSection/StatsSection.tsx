@@ -1,17 +1,18 @@
 "use client";
 
+import CountUp from "@/components/shared/count/CountUp";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
 const stats = [
-  { number: "15+", label: "Years of Experience" },
-  { number: "1500+", label: "Projects Done" },
-  { number: "2000+", label: "Happy Client" },
-  { number: "30+", label: "Country Served" },
-  { number: "18+", label: "App Downloads" },
-  { number: "50+", label: "Dedicated Developers" },
-  { number: "795+", label: "Websites Developed" },
-  { number: "4+", label: "Rating on Clutch.co" },
+  { number: 15, label: "Years of Experience" },
+  { number: 1500, label: "Projects Done" },
+  { number: 2000, label: "Happy Client" },
+  { number: 30, label: "Country Served" },
+  { number: 18, label: "App Downloads" },
+  { number: 50, label: "Dedicated Developers" },
+  { number: 795, label: "Websites Developed" },
+  { number: 4, label: "Rating on Clutch.co" },
 ];
 
 export default function StatsSection() {
@@ -35,7 +36,14 @@ export default function StatsSection() {
               <div className="absolute left-0 top-0 w-[2px] h-8 bg-orange-500" />
               <div className="pl-6">
                 <div className="text-4xl font-medium text-gray-900 mb-2">
-                  {stat.number}
+                  <CountUp
+                    from={0}
+                    to={stat.number}
+                    separator=","
+                    direction="up"
+                    duration={1}
+                    className="count-up-text"
+                  />
                 </div>
                 <div className="text-gray-500 whitespace-pre-line">
                   {stat.label}
