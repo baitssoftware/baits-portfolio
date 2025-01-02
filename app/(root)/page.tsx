@@ -8,6 +8,7 @@ import ClientsReviews from "@/components/home/review/ClientsReviews";
 import ServiceSection from "@/components/home/ServiceSection/ServiceSection";
 import StartProject from "@/components/home/StartProject/StartProject";
 import StatsSection from "@/components/home/StatsSection/StatsSection";
+import { ShortProjects } from "@/data/projectsShort.data";
 
 const page = () => {
   return (
@@ -18,7 +19,7 @@ const page = () => {
       <OurApproach />
       <StatsSection />
       <ServiceSection />
-      <Featured />
+      <Featured projects={ShortProjects} />
       <ClientsReviews />
       <BlogSection />
       <StartProject />

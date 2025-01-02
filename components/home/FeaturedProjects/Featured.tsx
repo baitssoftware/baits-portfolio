@@ -1,35 +1,14 @@
 import AnimatedButton from "@/components/shared/button/AnimatedButton";
 import RoundedButton from "@/components/shared/button/RoundedButton";
+import { TProject } from "@/data/projectsShort.data";
 import Image from "next/image";
+import Link from "next/link";
 
-const Featured = () => {
-  const projects = [
-    {
-      name: "NEDUBD",
-      tags: ["HTML", "CSS", "JavaScript", "Responsive Design"],
-      link: "https://example.com/portfolio",
-      image: "/p1.png",
-    },
-    {
-      name: "E-Commerce Store",
-      tags: ["React", "Redux", "Node.js", "MongoDB"],
-      link: "https://example.com/ecommerce",
-      image: "/p2.png",
-    },
-    {
-      name: "Blog Platform",
-      tags: ["Next.js", "GraphQL", "Apollo Client", "Prisma"],
-      link: "https://example.com/blog-platform",
-      image: "/p3.png",
-    },
-    {
-      name: "Task Manager",
-      tags: ["Vue.js", "Vuex", "Firebase", "Material Design"],
-      link: "https://example.com/task-manager",
-      image: "/p4.png",
-    },
-  ];
+interface FeaturedProps {
+  projects: TProject[];
+}
 
+const Featured: React.FC<FeaturedProps> = ({ projects }) => {
   return (
     <div className="">
       <h2 className="text-7xl pt-20 py-16 px-16 border-b border-black/15">
@@ -41,12 +20,7 @@ const Featured = () => {
             key={index}
             className="col-span-2 md:col-span-1 overflow-hidden  mt-6"
           >
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block"
-            >
+            <Link href={`/projects/${project.id}`} className="block">
               <h2 className="text-2xl pb-6 uppercase">• {project.name}</h2>
               <div
                 key={index}
@@ -75,7 +49,7 @@ const Featured = () => {
                   </RoundedButton>
                 ))}
               </div>
-            </a>
+            </Link>
           </div>
         ))}
       </div>

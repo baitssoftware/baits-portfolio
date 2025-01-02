@@ -19,7 +19,7 @@ const FlipLink: React.FC<FlipLinkProps> = ({ children, href }) => {
       initial="initial"
       whileHover="hovered"
       href={href}
-      className="relative block overflow-hidden whitespace-nowrap text-4xl font-black uppercase sm:text-7xl md:text-8xl lg:text-[12rem]"
+      className="relative block overflow-hidden whitespace-nowrap text-4xl font-black uppercase sm:text-7xl md:text-8xl lg:text-[14rem]"
       style={{
         lineHeight: 0.75,
       }}
@@ -76,10 +76,12 @@ const FlipLink: React.FC<FlipLinkProps> = ({ children, href }) => {
 
 const RevealLinks: React.FC = () => {
   return (
-    <section className="grid place-content-center gap-2 bg-[#CDEA68] px-8 py-40 text-black">
-      <FlipLink href="#">Twitter</FlipLink>
-      <FlipLink href="#">Linkedin</FlipLink>
+    <section className="grid place-content-center gap-2 bg-[#CDEA68] px-8 py-40 text-black heading-text text-center">
       <FlipLink href="#">Facebook</FlipLink>
+      <div className="flex items-center justify-center gap-8">
+        <FlipLink href="#">Twitter</FlipLink>
+        <FlipLink href="#">Linkedin</FlipLink>
+      </div>
       <FlipLink href="#">Instagram</FlipLink>
     </section>
   );

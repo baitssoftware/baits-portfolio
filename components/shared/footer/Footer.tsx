@@ -89,7 +89,7 @@ const FooterColumn = ({
 
 const Footer = () => {
   return (
-    <footer className="bg-[#212121] border-t border-black text-white">
+    <footer className="bg-white  text-black">
       <div className="px-4 py-32 pb-20 sm:px-6 lg:px-16">
         <div className="grid grid-cols-1 md:grid-cols-6 gap-8">
           {/* Logo and Description */}
