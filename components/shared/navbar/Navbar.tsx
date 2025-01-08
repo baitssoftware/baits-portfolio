@@ -1,11 +1,11 @@
 "use client";
-import { AnimatePresence, motion } from "framer-motion";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { useState } from "react";
+import { DialogTitle } from "@radix-ui/react-dialog";
+import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { DialogTitle } from "@radix-ui/react-dialog";
-import Image from "next/image";
+import { useState } from "react";
 
 interface platform {
   platform: string;
@@ -41,6 +41,8 @@ const Navbar = () => {
       router.push(href);
     }, 500); // Adjust this value to control the delay before navigation
   };
+
+  const currentYear = new Date().getFullYear();
 
   return (
     <header className="px-16 py-6 z-50">
@@ -131,7 +133,7 @@ const Navbar = () => {
                   <motion.div className="p-10 overflow-hidden">
                     <div className="grid grid-cols-3">
                       <h3 className="text-[20rem] leading-[4rem] font-semibold mb-10">
-                        ©2024
+                        ©{currentYear}
                       </h3>
                       <motion.div
                         initial={{ opacity: 0, y: -90 }}
