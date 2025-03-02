@@ -1,11 +1,9 @@
-import { AnimatedText } from "@/components/shared/animatedText/AnimatedText";
-import { ArrowUpRight } from "lucide-react";
+'use client';
+import { AnimatedText } from '@/components/shared/animatedText/AnimatedText';
+import { ArrowUpRight } from 'lucide-react';
 
 const ContactInfo = () => {
-  const locations = [
-    "202-1965 W 4th Ave Vancouver, Canada",
-    "30 Chukarina St Lviv, Bangladesh",
-  ];
+  const locations = ['202-1965 W 4th Ave Vancouver, Canada', '30 Chukarina St Lviv, Bangladesh'];
 
   return (
     <div className="grid grid-cols-8 pb-28 pt-6 px-16  gap-28 text-2xl bg-[#CDEA68] border-t border-black/15">
@@ -24,9 +22,7 @@ const ContactInfo = () => {
       </div>
       <div className="col-span-2 text-end ms-auto">
         <button className="uppercase flex items-center justify-center gap-2">
-          <p className="border border-black/15 rounded-full py-2 px-4">
-            hello@baits.com
-          </p>
+          <p className="border border-black/15 rounded-full py-2 px-4">hello@baits.com</p>
           <p className="border border-black/15 rounded-full p-2.5">
             <ArrowUpRight />
           </p>

@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import { useRef, useEffect } from "react";
-import { motion, useMotionValue } from "framer-motion";
-import gsap from "gsap";
+import { motion, useMotionValue } from 'framer-motion';
+import gsap from 'gsap';
+import { useEffect, useRef } from 'react';
 
-import Image from "next/image";
-import { testimonials } from "../data/testimonialsData";
+import Image from 'next/image';
+import { testimonials } from '../data/testimonialsData';
 
 export function TestimonialSlider() {
   const sliderRef = useRef<HTMLDivElement>(null);
@@ -19,7 +19,7 @@ export function TestimonialSlider() {
         y: 20,
         duration: 0.8,
         stagger: 0.2,
-        ease: "power3.out",
+        ease: 'power3.out',
       });
     }
   }, []);
@@ -57,9 +57,7 @@ export function TestimonialSlider() {
             <h3 className="text-3xl font-medium mb-4 pt-4 underline underline-offset-[8px] ">
               {testimonial.company}
             </h3>
-            <p className="text-gray-600 text-xl leading-relaxed">
-              {testimonial.text}
-            </p>
+            <p className="text-gray-600 text-xl leading-relaxed">{testimonial.text}</p>
           </motion.div>
         ))}
       </motion.div>

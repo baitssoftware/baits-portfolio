@@ -1,6 +1,7 @@
-import { motion } from "framer-motion";
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
+'use client';
+import { motion } from 'framer-motion';
+import gsap from 'gsap';
+import { useEffect, useRef } from 'react';
 
 interface DragIndicatorProps {
   isVisible: boolean;
@@ -14,7 +15,7 @@ export function DragIndicator({ isVisible }: DragIndicatorProps) {
       gsap.fromTo(
         indicatorRef.current,
         { scale: 0.8, opacity: 0 },
-        { scale: 1, opacity: 1, duration: 0.3, ease: "power2.out" }
+        { scale: 1, opacity: 1, duration: 0.3, ease: 'power2.out' },
       );
     }
   }, [isVisible]);
@@ -23,7 +24,7 @@ export function DragIndicator({ isVisible }: DragIndicatorProps) {
     <motion.div
       ref={indicatorRef}
       className={`fixed z-50 pointer-events-none transform -translate-x-1/2 -translate-y-1/2 ${
-        isVisible ? "opacity-100" : "opacity-0"
+        isVisible ? 'opacity-100' : 'opacity-0'
       }`}
       style={{
         left: `${50}%`,
