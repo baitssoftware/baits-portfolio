@@ -1,61 +1,61 @@
-"use client";
+'use client';
 
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 
-import Link from "next/link";
-import { Instagram, Twitter, Facebook, Github, Linkedin } from "lucide-react";
+import { Facebook, Github, Instagram, Linkedin, Twitter } from 'lucide-react';
+import Link from 'next/link';
 
 const footerSections = {
   company: {
-    title: "MENU",
+    title: 'MENU',
     links: [
-      { name: "Home", href: "/" },
-      { name: "About Us", href: "/about-us" },
-      { name: "Contact", href: "/contact" },
-      { name: "Services", href: "/services" },
-      { name: "Blogs", href: "/blogs" },
-      { name: "Our Works", href: "/projects" },
-      { name: "Career", href: "/projects" },
+      { name: 'Home', href: '/' },
+      { name: 'About Us', href: '/about-us' },
+      { name: 'Contact', href: '/contact' },
+      { name: 'Services', href: '/services' },
+      { name: 'Blogs', href: '/blogs' },
+      { name: 'Our Works', href: '/projects' },
+      { name: 'Career', href: '/projects' },
     ],
   },
   services: {
-    title: "SERVICES",
+    title: 'SERVICES',
     links: [
-      { name: "Web Development", href: "#" },
-      { name: "Mobile Apps", href: "#" },
-      { name: "Cloud Solutions", href: "#" },
-      { name: "AI Integration", href: "#" },
-      { name: "DevOps", href: "#" },
+      { name: 'Web Development', href: '#' },
+      { name: 'Mobile Apps', href: '#' },
+      { name: 'Cloud Solutions', href: '#' },
+      { name: 'AI Integration', href: '#' },
+      { name: 'DevOps', href: '#' },
     ],
   },
   resources: {
-    title: "RESOURCES",
+    title: 'RESOURCES',
     links: [
-      { name: "Documentation", href: "#" },
-      { name: "API Reference", href: "#" },
-      { name: "Status Page", href: "#" },
-      { name: "Support", href: "#" },
+      { name: 'Documentation', href: '#' },
+      { name: 'API Reference', href: '#' },
+      { name: 'Status Page', href: '#' },
+      { name: 'Support', href: '#' },
     ],
   },
   importantLink: {
-    title: "IMPORTANT",
+    title: 'IMPORTANT',
     links: [
-      { name: "FAQs", href: "/faqs" },
-      { name: "Trams & Conditions", href: "/eula" },
-      { name: "Career", href: "/career" },
-      { name: "Contact", href: "/contact" },
-      { name: "Account", href: "/account" },
-      { name: "Log In", href: "/login" },
+      { name: 'FAQs', href: '/faqs' },
+      { name: 'Trams & Conditions', href: '/eula' },
+      { name: 'Career', href: '/career' },
+      { name: 'Contact', href: '/contact' },
+      { name: 'Account', href: '/account' },
+      { name: 'Log In', href: '/login' },
     ],
   },
 };
 
 const socialLinks = [
-  { name: "GitHub", icon: Github, href: "#" },
-  { name: "LinkedIn", icon: Linkedin, href: "#" },
-  { name: "Twitter", icon: Twitter, href: "#" },
-  { name: "Instagram", icon: Instagram, href: "#" },
-  { name: "Facebook", icon: Facebook, href: "#" },
+  { name: 'GitHub', icon: Github, href: '#' },
+  { name: 'LinkedIn', icon: Linkedin, href: '#' },
+  { name: 'Twitter', icon: Twitter, href: '#' },
+  { name: 'Instagram', icon: Instagram, href: '#' },
+  { name: 'Facebook', icon: Facebook, href: '#' },
 ];
 
 const FooterColumn = ({
@@ -107,7 +107,7 @@ const Footer = () => {
                 height={40}
                 className="h-16 w-auto"
               /> */}
-              <h1 className="ml-3 text-3xl font- underline underline-offset-8   pe-10">
+              <h1 className="ml-3 text-3xl font- leading-8  pe-10">
                 Bangladesh Associate of IT Solution
               </h1>
             </Link>
@@ -118,10 +118,7 @@ const Footer = () => {
             title={footerSections.services.title}
             links={footerSections.services.links}
           />
-          <FooterColumn
-            title={footerSections.company.title}
-            links={footerSections.company.links}
-          />
+          <FooterColumn title={footerSections.company.title} links={footerSections.company.links} />
           <FooterColumn
             title={footerSections.importantLink.title}
             links={footerSections.importantLink.links}
