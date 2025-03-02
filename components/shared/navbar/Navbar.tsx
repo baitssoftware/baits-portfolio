@@ -1,11 +1,11 @@
-"use client";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { DialogTitle } from "@radix-ui/react-dialog";
-import { AnimatePresence, motion } from "framer-motion";
-import Image from "next/image";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
+'use client';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { DialogTitle } from '@radix-ui/react-dialog';
+import { AnimatePresence, motion } from 'framer-motion';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 
 interface platform {
   platform: string;
@@ -16,20 +16,20 @@ const Navbar = () => {
   const router = useRouter();
 
   const navItems = [
-    { label: "FAQs", href: "/faqs" },
-    { label: "Trams & Conditions", href: "/eula" },
-    { label: "Career", href: "/career" },
-    { label: "Contact", href: "/contact" },
-    { label: "Account", href: "/account" },
-    { label: "Log In", href: "/login" },
+    { label: 'FAQs', href: '/faqs' },
+    { label: 'Trams & Conditions', href: '/eula' },
+    { label: 'Career', href: '/career' },
+    { label: 'Contact', href: '/contact' },
+    { label: 'Account', href: '/account' },
+    { label: 'Log In', href: '/login' },
   ];
   const menuLinks = [
-    { name: "Home", href: "/" },
-    { name: "About Us", href: "/about-us" },
-    { name: "Contact", href: "/contact" },
-    { name: "Services", href: "/services" },
-    { name: "Blogs", href: "/blogs" },
-    { name: "Our Works", href: "/projects" },
+    { name: 'Home', href: '/' },
+    { name: 'About Us', href: '/about-us' },
+    { name: 'Contact', href: '/contact' },
+    { name: 'Services', href: '/services' },
+    { name: 'Blogs', href: '/blogs' },
+    { name: 'Our Works', href: '/projects' },
   ];
 
   const handleLinkClick = (href: string) => {
@@ -56,9 +56,9 @@ const Navbar = () => {
               <Image
                 width={120}
                 height={200}
-                src={"/BAITS.svg"}
+                src={'/BAITS-04.svg'}
                 alt="baits logo"
-                className="h-7 "
+                className="h-9 "
               ></Image>
             </Link>
           </div>
@@ -66,17 +66,12 @@ const Navbar = () => {
           <div>
             <SheetTrigger>
               <div className="button z-30">
-                <div
-                  className={`burger ${isActive ? "burgerActive" : ""}`}
-                ></div>
+                <div className={`burger ${isActive ? 'burgerActive' : ''}`}></div>
               </div>
             </SheetTrigger>
           </div>
 
-          <SheetContent
-            side="top"
-            className="h-[80vh] pt-16 p-0 overflow-hidden"
-          >
+          <SheetContent side="top" className="h-[80vh] pt-16 p-0 overflow-hidden">
             <DialogTitle></DialogTitle>
             <AnimatePresence>
               {isActive && (
@@ -88,9 +83,7 @@ const Navbar = () => {
                     transition={{ duration: 0.5 }} // Increased duration for slower animation
                     className="p-10 shadow-xl overflow-hidden"
                   >
-                    <h1 className="text-2xl tracking-tight">
-                      Bangladesh Associate of IT Solution
-                    </h1>
+                    <h1 className="text-2xl tracking-tight">Bangladesh Associate of IT Solution</h1>
                     <div className="grid grid-cols-3">
                       <div className="col-span-1 col-start-3 min-h-[45vh] text-2xl flex flex-col justify-between">
                         <div>
@@ -113,18 +106,16 @@ const Navbar = () => {
                           </p>
                         </div>
                         <div className="flex items-center gap-2">
-                          {["facebook", "linkedin", "instagram"].map(
-                            (platform, index) => (
-                              <button key={index}>
-                                <a
-                                  className="bg-black p-2 rounded-full inline-block"
-                                  href="www.facebook.com"
-                                >
-                                  <Icon platform={platform} />
-                                </a>
-                              </button>
-                            )
-                          )}
+                          {['facebook', 'linkedin', 'instagram'].map((platform, index) => (
+                            <button key={index}>
+                              <a
+                                className="bg-black p-2 rounded-full inline-block"
+                                href="www.facebook.com"
+                              >
+                                <Icon platform={platform} />
+                              </a>
+                            </button>
+                          ))}
                         </div>
                       </div>
                     </div>
@@ -193,7 +184,7 @@ const Navbar = () => {
 
 const Icon = ({ platform }: platform) => {
   switch (platform) {
-    case "facebook":
+    case 'facebook':
       return (
         <svg
           width="20px"
@@ -206,22 +197,12 @@ const Icon = ({ platform }: platform) => {
           stroke="#ffffff"
         >
           <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-          <g
-            id="SVGRepo_tracerCarrier"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          ></g>
+          <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
           <g id="SVGRepo_iconCarrier">
             <title>facebook [#ffffff]</title>
             <desc>Created with Sketch.</desc>
             <defs></defs>
-            <g
-              id="Page-1"
-              stroke="none"
-              strokeWidth="1"
-              fill="none"
-              fillRule="evenodd"
-            >
+            <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
               <g
                 id="Dribbble-Light-Preview"
                 transform="translate(-385.000000, -7399.000000)"
@@ -238,7 +219,7 @@ const Icon = ({ platform }: platform) => {
           </g>
         </svg>
       );
-    case "linkedin":
+    case 'linkedin':
       return (
         <svg
           fill="#ffffff"
@@ -251,7 +232,7 @@ const Icon = ({ platform }: platform) => {
           <path d="M116.504,500.219V170.654H6.975v329.564H116.504 L116.504,500.219z M61.751,125.674c38.183,0,61.968-25.328,61.968-56.953c-0.722-32.328-23.785-56.941-61.252-56.941 C24.994,11.781,0.5,36.394,0.5,68.722c0,31.625,23.772,56.953,60.53,56.953H61.751L61.751,125.674z M177.124,500.219 c0,0,1.437-298.643,0-329.564H286.67v47.794h-0.727c14.404-22.49,40.354-55.533,99.44-55.533 c72.085,0,126.116,47.103,126.116,148.333v188.971H401.971V323.912c0-44.301-15.848-74.531-55.497-74.531 c-30.254,0-48.284,20.38-56.202,40.08c-2.897,7.012-3.602,16.861-3.602,26.711v184.047H177.124L177.124,500.219z" />
         </svg>
       );
-    case "instagram":
+    case 'instagram':
       return (
         <svg
           width="20px"
@@ -261,24 +242,14 @@ const Icon = ({ platform }: platform) => {
           fill="none"
         >
           <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-          <g
-            id="SVGRepo_tracerCarrier"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          ></g>
+          <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
           <g id="SVGRepo_iconCarrier">
             <path
               stroke="#ffffff"
               strokeWidth="12"
               d="M96 162c-14.152 0-24.336-.007-32.276-.777-7.849-.761-12.87-2.223-16.877-4.741a36 36 0 0 1-11.33-11.329c-2.517-4.007-3.98-9.028-4.74-16.877C30.007 120.336 30 110.152 30 96c0-14.152.007-24.336.777-32.276.76-7.849 2.223-12.87 4.74-16.877a36 36 0 0 1 11.33-11.33c4.007-2.517 9.028-3.98 16.877-4.74C71.663 30.007 81.847 30 96 30c14.152 0 24.336.007 32.276.777 7.849.76 12.87 2.223 16.877 4.74a36 36 0 0 1 11.329 11.33c2.518 4.007 3.98 9.028 4.741 16.877.77 7.94.777 18.124.777 32.276 0 14.152-.007 24.336-.777 32.276-.761 7.849-2.223 12.87-4.741 16.877a36 36 0 0 1-11.329 11.329c-4.007 2.518-9.028 3.98-16.877 4.741-7.94.77-18.124.777-32.276.777Z"
             ></path>
-            <circle
-              cx="96"
-              cy="96"
-              r="30"
-              stroke="#ffffff"
-              strokeWidth="12"
-            ></circle>
+            <circle cx="96" cy="96" r="30" stroke="#ffffff" strokeWidth="12"></circle>
             <circle cx="135" cy="57" r="9" fill="#ffffff"></circle>
           </g>
         </svg>
