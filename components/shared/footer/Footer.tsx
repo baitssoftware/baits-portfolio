@@ -41,7 +41,7 @@ const footerSections = {
     title: 'IMPORTANT',
     links: [
       { name: 'FAQs', href: '/faqs' },
-      { name: 'Trams & Conditions', href: '/eula' },
+      { name: 'Trams & Conditions', href: '/trams-and-conditions' },
       { name: 'Career', href: '/career' },
       { name: 'Contact', href: '/contact' },
       { name: 'Account', href: '/account' },

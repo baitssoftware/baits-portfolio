@@ -17,7 +17,7 @@ const Navbar = () => {
 
   const navItems = [
     { label: 'FAQs', href: '/faqs' },
-    { label: 'Trams & Conditions', href: '/eula' },
+    { label: 'Trams & Conditions', href: '/trams-and-conditions' },
     { label: 'Career', href: '/career' },
     { label: 'Contact', href: '/contact' },
     { label: 'Account', href: '/account' },

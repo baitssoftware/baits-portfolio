@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --font-anek-bangla: "Anek Bangla", sans-serif;
+  --font-anek-bangla: 'Anek Bangla', sans-serif;
 }
 html {
   scroll-behavior: smooth;
@@ -13,12 +13,12 @@ html {
 }
 
 html,
-body {
+/* body {
   height: 100%;
   overflow: hidden; /* Prevent default browser scroll */
-}
+/* } */
 
-[data-scroll-container] {
+/* [data-scroll-container] {
   position: relative;
 }
 
@@ -26,7 +26,7 @@ body {
   position: relative;
   width: 100%;
   overflow: hidden;
-}
+} */
 
 body {
   font-family: var(--font-anek-bangla);
@@ -108,12 +108,12 @@ body {
 }
 
 @font-face {
-  font-family: "FoundersGrotesk";
-  src: url("/fonts/FoundersGrotesk-Semibold.ttf") format("truetype");
+  font-family: 'FoundersGrotesk';
+  src: url('/fonts/FoundersGrotesk-Semibold.ttf') format('truetype');
 }
 
 .heading-text {
-  font-family: "FoundersGrotesk", sans-serif;
+  font-family: 'FoundersGrotesk', sans-serif;
 }
 /* NAVBAR BUTTON  */
 .button {
@@ -128,7 +128,7 @@ body {
   width: 100%;
 }
 .burger::after {
-  content: "";
+  content: '';
   display: block;
   height: 2px;
   width: 55%;
@@ -139,7 +139,7 @@ body {
   top: -7px;
 }
 .burger::before {
-  content: "";
+  content: '';
   display: block;
   height: 2px;
   width: 55%;
@@ -150,7 +150,7 @@ body {
   top: 7px;
 }
 .burgerActive::after {
-  content: "";
+  content: '';
   display: block;
   height: 2px;
   width: 55%;
@@ -161,7 +161,7 @@ body {
   top: -1px;
 }
 .burgerActive::before {
-  content: "";
+  content: '';
   display: block;
   height: 2px;
   width: 55%;
@@ -180,7 +180,7 @@ body {
 }
 
 .hover-underline-animation::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 100%;
   transform: scaleX(0);
