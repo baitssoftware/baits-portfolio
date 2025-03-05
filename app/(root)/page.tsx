@@ -1,4 +1,4 @@
-// import OurApproach from "@/components/home/approach/OurApproach";
+import OurApproach from '@/components/home/approach/OurApproach';
 import Hero from '@/components/home/banner/Hero';
 // import BlogSection from "@/components/home/blogs/BlogSection";
 import ClientLogo from '@/components/home/clientLogo/ClientLogo';
@@ -16,7 +16,7 @@ const page = () => {
       <Hero />
       <ClientLogo />
       <MarqueeText text={'WE are baits.'} />
-      {/* <OurApproach /> */}
+      <OurApproach />
       {/* <StatsSection /> */}
       {/* <ServiceSection /> */}
       {/* <Featured projects={ShortProjects} /> */}
