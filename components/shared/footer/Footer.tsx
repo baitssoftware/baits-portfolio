@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-
 import { Facebook, Github, Instagram, Linkedin, Twitter } from 'lucide-react';
 import Link from 'next/link';
 
@@ -70,14 +69,15 @@ const FooterColumn = ({
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.5 }}
+    className="mb-8 lg:mb-0"
   >
-    <h3 className="text-xl  mb-4">{title}:</h3>
+    <h3 className="text-lg lg:text-xl mb-4">{title}:</h3>
     <ul className="space-y-2">
       {links.map((link) => (
         <li key={link.name}>
           <Link
             href={link.href}
-            className=" hover-underline-animation transition-colors text-xl font-light"
+            className="hover-underline-animation transition-colors text-base lg:text-xl font-light"
           >
             {link.name}
           </Link>
@@ -89,25 +89,18 @@ const FooterColumn = ({
 
 const Footer = () => {
   return (
-    <footer className="bg-white  text-black">
-      <div className="px-4 py-32 pb-20 sm:px-6 lg:px-16">
-        <div className="grid grid-cols-1 md:grid-cols-6 gap-8">
+    <footer className="bg-white text-black">
+      <div className="px-4 py-16 lg:py-32 lg:pb-20 sm:px-6 lg:px-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-8">
           {/* Logo and Description */}
           <motion.div
-            className="md:col-span-1"
+            className="col-span-1 sm:col-span-2 lg:col-span-1 mb-8 lg:mb-0"
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
             <Link href="/" className="">
-              {/* <Image
-                src="/BAITS-04.svg"
-                alt="Company Logo"
-                width={40}
-                height={40}
-                className="h-16 w-auto"
-              /> */}
-              <h1 className="ml-3 text-3xl font- leading-8  pe-10">
+              <h1 className="text-2xl lg:text-3xl font-bold leading-8 lg:pe-10">
                 Bangladesh Associate of IT Solution
               </h1>
             </Link>
@@ -127,15 +120,15 @@ const Footer = () => {
             title={footerSections.resources.title}
             links={footerSections.resources.links}
           />
-          <div className="">
-            <div className="flex space-x-2 mb-4 md:mb-0">
+          <div className="col-span-1 sm:col-span-2 lg:col-span-1">
+            <div className="flex space-x-2 mb-4">
               {socialLinks.map((social) => {
                 const Icon = social.icon;
                 return (
                   <Link
                     key={social.name}
                     href={social.href}
-                    className=" hover:text-blue-600 transition-colors p-2 rounded-full bg-white text-[#212121]"
+                    className="hover:text-blue-600 transition-colors p-2 rounded-full bg-white text-[#212121]"
                     aria-label={social.name}
                   >
                     <Icon className="h-5 w-5" />
@@ -148,7 +141,7 @@ const Footer = () => {
 
         {/* Bottom Section */}
         <motion.div
-          className="mt-12 pt-8 "
+          className="mt-12 pt-8"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -156,7 +149,7 @@ const Footer = () => {
         >
           <div className="flex flex-col md:flex-row justify-center items-center">
             <div className="flex items-center space-x-4">
-              <span className="text-sm ">
+              <span className="text-sm text-center">
                 © 2024 Bangladesh Associate of IT Solution. All rights reserved.
               </span>
             </div>
