@@ -12,11 +12,11 @@ import {
   GlobeLock,
   Handshake,
   LockKeyhole,
-  LucideIcon,
+  type LucideIcon,
   Scale,
   ShieldCheck,
 } from 'lucide-react';
-import React from 'react';
+import type React from 'react';
 import Hero from './components/Hero';
 
 interface PolicySectionProps {
@@ -31,15 +31,15 @@ const PolicySection: React.FC<PolicySectionProps> = ({ title, children, icon: Ic
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.5 }}
-    className="mb-12 bg-white p-8 rounded-lg shadow-sm border border-gray-100"
+    className="mb-12 bg-white p-4 sm:p-6 md:p-8 rounded-lg shadow-sm border border-gray-100"
   >
     <div className="flex items-center mb-5 gap-3">
-      <div className="bg-orange-50 w-10 h-10 flex items-center justify-center rounded-md">
-        <Icon className="w-5 h-5 text-orange-600" />
+      <div className="bg-orange-50 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center rounded-md">
+        <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-orange-600" />
       </div>
-      <h3 className="text-2xl font-semibold text-gray-900">{title}</h3>
+      <h3 className="text-xl sm:text-2xl font-semibold text-gray-900">{title}</h3>
     </div>
-    <div className="text-gray-700 text-base leading-relaxed space-y-4 ml-2 border-l-2 border-gray-100 pl-6">
+    <div className="text-gray-700 text-sm sm:text-base leading-relaxed space-y-4 ml-2 border-l-2 border-gray-100 pl-4 sm:pl-6">
       {children}
     </div>
   </motion.div>
@@ -57,13 +57,13 @@ const Card: React.FC<CardProps> = ({ icon: Icon, title, description }) => (
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.5 }}
-    className="bg-white p-8 rounded-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-orange-200 h-full flex flex-col"
+    className="bg-white p-4 sm:p-6 md:p-8 rounded-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-orange-200 h-full flex flex-col"
   >
-    <div className="mb-5 bg-orange-50 w-14 h-14 flex items-center justify-center rounded-md">
-      <Icon className="w-7 h-7 text-orange-600" />
+    <div className="mb-4 sm:mb-5 bg-orange-50 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center rounded-md">
+      <Icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-orange-600" />
     </div>
-    <h3 className="text-xl font-semibold text-gray-900 mb-3">{title}</h3>
-    <p className="text-gray-600 text-base leading-relaxed flex-grow">{description}</p>
+    <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-3">{title}</h3>
+    <p className="text-gray-600 text-sm sm:text-base leading-relaxed flex-grow">{description}</p>
   </motion.div>
 );
 
@@ -81,8 +81,10 @@ interface TableOfContentsProps {
 }
 
 const TableOfContents: React.FC<TableOfContentsProps> = ({ sections }) => (
-  <div className="bg-gray-50 p-6 rounded-lg mb-10 sticky top-10">
-    <h4 className="text-lg font-semibold mb-4 text-gray-900">Table of Contents</h4>
+  <div className="bg-gray-50 p-4 sm:p-6 rounded-lg mb-6 sm:mb-10 sticky top-10">
+    <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-gray-900">
+      Table of Contents
+    </h4>
     <ul className="space-y-2">
       {sections.map((section, index) => (
         <li key={index}>
@@ -90,10 +92,10 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ sections }) => (
             href={`#section-${index + 1}`}
             className="text-orange-600 hover:text-orange-800 hover:underline flex items-center gap-2"
           >
-            <span className="text-sm font-medium bg-orange-100 text-orange-700 w-6 h-6 flex items-center justify-center rounded-full">
+            <span className="text-xs sm:text-sm font-medium bg-orange-100 text-orange-700 w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center rounded-full">
               {index + 1}
             </span>
-            <span>{section.title}</span>
+            <span className="text-sm sm:text-base">{section.title}</span>
           </a>
         </li>
       ))}
@@ -272,18 +274,16 @@ export default function TermsAndConditions(): React.ReactElement {
     <div className="flex min-h-screen flex-col">
       <main className="flex-1">
         {/* Hero Section with Improved Styling */}
-        <div className="">
+        <div>
           <Hero />
-          <section className="px-16 py-8">
-            <div className="flex flex-col md:flex-row justify-between items-start gap-8">
-              <div className="space-y-4 max-w-2xl">
-                <h1 className="text-4xl md:text-5xl text-gray-900">Terms and Conditions</h1>
-                {/* <p className="text-gray-600 md:text-lg">
-                  Our Terms and Conditions establish the legal framework for using our services.
-                  Please review them carefully to understand your rights and responsibilities.
-                </p> */}
+          <section className="px-4 sm:px-8 md:px-12 lg:px-16 py-4 sm:py-6 md:py-8">
+            <div className="flex flex-col md:flex-row justify-between items-start gap-4 sm:gap-6 md:gap-8">
+              <div className="space-y-2 sm:space-y-4 max-w-2xl">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-gray-900">
+                  Terms and Conditions
+                </h1>
               </div>
-              <div className="flex flex-col gap-3 min-[400px]:flex-row shrink-0">
+              <div className="flex flex-col gap-2 sm:gap-3 min-[400px]:flex-row shrink-0 w-full md:w-auto">
                 <AnimatedButton text="Download PDF" href="#download-pdf" />
                 <AnimatedButton text="Contact Legal" href="#contact-legal" />
               </div>
@@ -292,18 +292,20 @@ export default function TermsAndConditions(): React.ReactElement {
         </div>
 
         {/* Key Principles Section with Improved Cards */}
-        <section className="w-full py-12 md:py-24 bg-white">
-          <div className=" px-6 md:px-16">
+        <section className="w-full py-8 sm:py-12 md:py-16 lg:py-24 bg-white">
+          <div className="px-4 sm:px-8 md:px-12 lg:px-16">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="mb-12"
+              className="mb-6 sm:mb-8 md:mb-12"
             >
-              <h2 className="text-3xl md:text-4xl text-gray-900 mb-3">Key Principles</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl text-gray-900 mb-2 sm:mb-3">
+                Key Principles
+              </h2>
             </motion.div>
 
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-4">
               {keyPrinciples.map((principle, index) => (
                 <motion.div
                   key={index}
@@ -324,47 +326,47 @@ export default function TermsAndConditions(): React.ReactElement {
         </section>
 
         {/* Full Terms Section with Tabs and Table of Contents */}
-        <section id="terms-full" className="w-full py-16 md:py-24 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-6 md:px-16">
+        <section id="terms-full" className="w-full py-8 sm:py-12 md:py-16 lg:py-24 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-8 md:px-12 lg:px-16">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="mb-12"
+              className="mb-6 sm:mb-8 md:mb-12"
             >
-              <h2 className="text-3xl md:text-4xl text-gray-900 mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl text-gray-900 mb-3 sm:mb-4 md:mb-6">
                 Complete Terms and Conditions
               </h2>
-              <p className="max-w-3xl text-gray-600 md:text-lg">
+              <p className="max-w-3xl text-gray-600 text-sm sm:text-base md:text-lg">
                 The following terms constitute the legally binding agreement between you and our
                 company. Please read them carefully.
               </p>
             </motion.div>
 
             <Tabs defaultValue="full-terms" className="w-full">
-              <TabsList className="mb-8 bg-white p-1 rounded-lg border border-gray-200">
+              <TabsList className="mb-4 sm:mb-6 md:mb-8 bg-white p-1 rounded-lg border border-gray-200 overflow-x-auto flex whitespace-nowrap">
                 <TabsTrigger
                   value="full-terms"
-                  className="px-6 py-3 data-[state=active]:bg-orange-50 data-[state=active]:text-orange-700"
+                  className="px-3 sm:px-4 md:px-6 py-2 sm:py-3 data-[state=active]:bg-orange-50 data-[state=active]:text-orange-700 text-sm sm:text-base"
                 >
                   Full Document
                 </TabsTrigger>
                 <TabsTrigger
                   value="simplified"
-                  className="px-6 py-3 data-[state=active]:bg-orange-50 data-[state=active]:text-orange-700"
+                  className="px-3 sm:px-4 md:px-6 py-2 sm:py-3 data-[state=active]:bg-orange-50 data-[state=active]:text-orange-700 text-sm sm:text-base"
                 >
                   Simplified Version
                 </TabsTrigger>
                 <TabsTrigger
                   value="faq"
-                  className="px-6 py-3 data-[state=active]:bg-orange-50 data-[state=active]:text-orange-700"
+                  className="px-3 sm:px-4 md:px-6 py-2 sm:py-3 data-[state=active]:bg-orange-50 data-[state=active]:text-orange-700 text-sm sm:text-base"
                 >
                   FAQ
                 </TabsTrigger>
               </TabsList>
 
               <TabsContent value="full-terms" className="mt-0">
-                <div className="flex flex-col lg:flex-row gap-10">
+                <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 md:gap-10">
                   <div className="lg:w-1/4 order-2 lg:order-1">
                     <TableOfContents sections={policySections} />
                   </div>
@@ -374,11 +376,11 @@ export default function TermsAndConditions(): React.ReactElement {
                       <div key={index} id={`section-${index + 1}`}>
                         <PolicySection title={`${index + 1}. ${section.title}`} icon={section.icon}>
                           {section.content.map((item, itemIndex) => (
-                            <div key={itemIndex} className="mb-6">
-                              <h4 className="font-medium text-lg text-gray-800 mb-2">
+                            <div key={itemIndex} className="mb-4 sm:mb-6">
+                              <h4 className="font-medium text-base sm:text-lg text-gray-800 mb-1 sm:mb-2">
                                 {item.subtitle}
                               </h4>
-                              <p>{item.text}</p>
+                              <p className="text-sm sm:text-base">{item.text}</p>
                             </div>
                           ))}
                         </PolicySection>
@@ -389,19 +391,21 @@ export default function TermsAndConditions(): React.ReactElement {
               </TabsContent>
 
               <TabsContent value="simplified" className="mt-0">
-                <div className="bg-white p-8 rounded-lg shadow-sm">
-                  <h3 className="text-2xl font-semibold mb-6">
+                <div className="bg-white p-4 sm:p-6 md:p-8 rounded-lg shadow-sm">
+                  <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6">
                     Terms and Conditions: Simplified Version
                   </h3>
-                  <p className="text-gray-500 italic mb-6">
+                  <p className="text-gray-500 italic mb-4 sm:mb-6 text-sm sm:text-base">
                     This simplified version is provided for convenience only and does not replace
                     the full Terms and Conditions.
                   </p>
 
-                  <div className="space-y-6">
-                    <div className="p-4 bg-orange-50 rounded-md">
-                      <h4 className="font-medium mb-2">What You Can Expect From Us:</h4>
-                      <ul className="list-disc pl-5 space-y-2">
+                  <div className="space-y-4 sm:space-y-6">
+                    <div className="p-3 sm:p-4 bg-orange-50 rounded-md">
+                      <h4 className="font-medium mb-2 text-sm sm:text-base">
+                        What You Can Expect From Us:
+                      </h4>
+                      <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-2 text-sm sm:text-base">
                         <li>We provide our services on an &#34;as is&#34; basis</li>
                         <li>
                           We protect your personal information according to our Privacy Policy
@@ -411,9 +415,11 @@ export default function TermsAndConditions(): React.ReactElement {
                       </ul>
                     </div>
 
-                    <div className="p-4 bg-blue-50 rounded-md">
-                      <h4 className="font-medium mb-2">What We Expect From You:</h4>
-                      <ul className="list-disc pl-5 space-y-2">
+                    <div className="p-3 sm:p-4 bg-blue-50 rounded-md">
+                      <h4 className="font-medium mb-2 text-sm sm:text-base">
+                        What We Expect From You:
+                      </h4>
+                      <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-2 text-sm sm:text-base">
                         <li>Use our services legally and respectfully</li>
                         <li>Maintain the security of your account</li>
                         <li>Only share content you have the right to share</li>
@@ -421,9 +427,11 @@ export default function TermsAndConditions(): React.ReactElement {
                       </ul>
                     </div>
 
-                    <div className="p-4 bg-gray-100 rounded-md">
-                      <h4 className="font-medium mb-2">Important Limitations:</h4>
-                      <ul className="list-disc pl-5 space-y-2">
+                    <div className="p-3 sm:p-4 bg-gray-100 rounded-md">
+                      <h4 className="font-medium mb-2 text-sm sm:text-base">
+                        Important Limitations:
+                      </h4>
+                      <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-2 text-sm sm:text-base">
                         <li>We limit our liability to the maximum extent permitted by law</li>
                         <li>
                           Disputes will be resolved according to the laws of [Your Jurisdiction]
@@ -438,14 +446,18 @@ export default function TermsAndConditions(): React.ReactElement {
               </TabsContent>
 
               <TabsContent value="faq" className="mt-0">
-                <div className="bg-white p-8 rounded-lg shadow-sm">
-                  <h3 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h3>
+                <div className="bg-white p-4 sm:p-6 md:p-8 rounded-lg shadow-sm">
+                  <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6">
+                    Frequently Asked Questions
+                  </h3>
 
-                  <div className="space-y-6">
+                  <div className="space-y-4 sm:space-y-6">
                     {faqItems.map((item, index) => (
-                      <div key={index} className="border-b border-gray-100 pb-5">
-                        <h4 className="font-medium text-lg text-gray-800 mb-2">{item.q}</h4>
-                        <p className="text-gray-600">{item.a}</p>
+                      <div key={index} className="border-b border-gray-100 pb-3 sm:pb-5">
+                        <h4 className="font-medium text-base sm:text-lg text-gray-800 mb-1 sm:mb-2">
+                          {item.q}
+                        </h4>
+                        <p className="text-gray-600 text-sm sm:text-base">{item.a}</p>
                       </div>
                     ))}
                   </div>
@@ -456,69 +468,80 @@ export default function TermsAndConditions(): React.ReactElement {
         </section>
 
         {/* Contact Section with Cards */}
-        <section id="contact-legal" className="w-full py-16 md:py-24 bg-white">
-          <div className="max-w-7xl mx-auto px-6 md:px-16">
+        <section id="contact-legal" className="w-full py-8 sm:py-12 md:py-16 lg:py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-8 md:px-12 lg:px-16">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="mb-12"
+              className="mb-6 sm:mb-8 md:mb-12"
             >
-              <h2 className="text-3xl md:text-4xl text-gray-900 mb-6">Need Assistance?</h2>
-              <p className="max-w-3xl text-gray-600 md:text-lg">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl text-gray-900 mb-3 sm:mb-4 md:mb-6">
+                Need Assistance?
+              </h2>
+              <p className="max-w-3xl text-gray-600 text-sm sm:text-base md:text-lg">
                 If you have questions about our Terms and Conditions or need legal assistance, our
                 team is here to help.
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-              <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:border-orange-200 transition-all duration-300">
-                <div className="mb-4 w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center">
-                  <FileCheck className="w-6 h-6 text-blue-600" />
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8 md:mb-12">
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm border border-gray-100 hover:border-orange-200 transition-all duration-300">
+                <div className="mb-3 sm:mb-4 w-10 h-10 sm:w-12 sm:h-12 bg-blue-50 rounded-full flex items-center justify-center">
+                  <FileCheck className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3">Legal Support</h3>
-                <p className="text-gray-600 mb-4">
+                <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3">Legal Support</h3>
+                <p className="text-gray-600 mb-3 sm:mb-4 text-sm sm:text-base">
                   Contact our legal team directly for specific inquiries about our terms or legal
                   matters.
                 </p>
-                <a href="/contact/legal" className="text-blue-600 font-medium hover:underline">
+                <a
+                  href="/contact/legal"
+                  className="text-blue-600 font-medium hover:underline text-sm sm:text-base"
+                >
                   legal@company.com
                 </a>
               </div>
 
-              <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:border-orange-200 transition-all duration-300">
-                <div className="mb-4 w-12 h-12 bg-green-50 rounded-full flex items-center justify-center">
-                  <Handshake className="w-6 h-6 text-green-600" />
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm border border-gray-100 hover:border-orange-200 transition-all duration-300">
+                <div className="mb-3 sm:mb-4 w-10 h-10 sm:w-12 sm:h-12 bg-green-50 rounded-full flex items-center justify-center">
+                  <Handshake className="w-5 h-5 sm:w-6 sm:h-6 text-green-600" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3">Customer Support</h3>
-                <p className="text-gray-600 mb-4">
+                <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3">Customer Support</h3>
+                <p className="text-gray-600 mb-3 sm:mb-4 text-sm sm:text-base">
                   Our support team is available to address general questions and concerns about our
                   services.
                 </p>
-                <a href="/contact/support" className="text-green-600 font-medium hover:underline">
+                <a
+                  href="/contact/support"
+                  className="text-green-600 font-medium hover:underline text-sm sm:text-base"
+                >
                   support@company.com
                 </a>
               </div>
 
-              <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:border-orange-200 transition-all duration-300">
-                <div className="mb-4 w-12 h-12 bg-purple-50 rounded-full flex items-center justify-center">
-                  <GlobeLock className="w-6 h-6 text-purple-600" />
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm border border-gray-100 hover:border-orange-200 transition-all duration-300">
+                <div className="mb-3 sm:mb-4 w-10 h-10 sm:w-12 sm:h-12 bg-purple-50 rounded-full flex items-center justify-center">
+                  <GlobeLock className="w-5 h-5 sm:w-6 sm:h-6 text-purple-600" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3">Privacy Concerns</h3>
-                <p className="text-gray-600 mb-4">
+                <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3">Privacy Concerns</h3>
+                <p className="text-gray-600 mb-3 sm:mb-4 text-sm sm:text-base">
                   For questions related to your privacy and data protection, contact our data
                   protection officer.
                 </p>
-                <a href="/contact/privacy" className="text-purple-600 font-medium hover:underline">
+                <a
+                  href="/contact/privacy"
+                  className="text-purple-600 font-medium hover:underline text-sm sm:text-base"
+                >
                   privacy@company.com
                 </a>
               </div>
             </div>
 
-            <div className="flex flex-col md:flex-row items-center justify-between bg-gray-50 p-8 rounded-lg">
-              <div className="mb-6 md:mb-0 md:mr-6">
-                <h3 className="text-xl font-semibold mb-2">Still have questions?</h3>
-                <p className="text-gray-600 max-w-xl">
+            <div className="flex flex-col md:flex-row items-center justify-between bg-gray-50 p-4 sm:p-6 md:p-8 rounded-lg">
+              <div className="mb-4 md:mb-0 md:mr-6 text-center md:text-left">
+                <h3 className="text-lg sm:text-xl font-semibold mb-2">Still have questions?</h3>
+                <p className="text-gray-600 max-w-xl text-sm sm:text-base">
                   Our legal team is ready to provide detailed explanations and guidance on our Terms
                   and Conditions.
                 </p>
