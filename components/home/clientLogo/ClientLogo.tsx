@@ -77,17 +77,19 @@ const ClientLogo = () => {
     '78.png',
     '79.png',
     '80.png',
+    '1.png',
+    '2.png',
+    '3.png',
+    '4.png',
+    '5.png',
+    '6.png',
+    '8.png',
+    '9.png',
   ];
 
   return (
     <div className="w-full overflow-hidden py-8 sm:py-12 md:py-16">
-      <Marquee
-        gradient={true}
-        gradientColor="#F1F1F1"
-        gradientWidth={100}
-        speed={50}
-        pauseOnHover={true}
-      >
+      <Marquee gradient={true} gradientColor="#F1F1F1" gradientWidth={100} speed={50}>
         {imageFiles.map((fileName, index) => (
           <div key={index} className="flex flex-col items-center mx-2 sm:mx-3 md:mx-4">
             <Image
