@@ -358,7 +358,7 @@ export default function ServicesPage() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex items-center text-start justify-between"
+            className="md:flex items-center text-start justify-between"
           >
             <div className="">
               <h2 className="text-3xl md:text-6xl  text-white mb-1">
