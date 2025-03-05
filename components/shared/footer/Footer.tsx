@@ -100,7 +100,7 @@ const Footer = () => {
             viewport={{ once: true }}
           >
             <Link href="/" className="">
-              <h1 className="text-2xl lg:text-3xl font-bold leading-8 lg:pe-10">
+              <h1 className="text-2xl lg:text-3xl font-semibold leading-8 lg:pe-10">
                 Bangladesh Associate of IT Solution
               </h1>
             </Link>
