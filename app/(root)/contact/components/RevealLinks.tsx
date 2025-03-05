@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import React from "react";
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
+import type React from 'react';
 
 // Define types for FlipLink props
 interface FlipLinkProps {
@@ -25,19 +25,19 @@ const FlipLink: React.FC<FlipLinkProps> = ({ children, href }) => {
       }}
     >
       <div>
-        {children.split("").map((l, i) => (
+        {children.split('').map((l, i) => (
           <motion.span
             variants={{
               initial: {
                 y: 0,
               },
               hovered: {
-                y: "-100%",
+                y: '-100%',
               },
             }}
             transition={{
               duration: DURATION,
-              ease: "easeInOut",
+              ease: 'easeInOut',
               delay: STAGGER * i,
             }}
             className="inline-block"
@@ -48,11 +48,11 @@ const FlipLink: React.FC<FlipLinkProps> = ({ children, href }) => {
         ))}
       </div>
       <div className="absolute inset-0">
-        {children.split("").map((l, i) => (
+        {children.split('').map((l, i) => (
           <motion.span
             variants={{
               initial: {
-                y: "100%",
+                y: '100%',
               },
               hovered: {
                 y: 0,
@@ -60,7 +60,7 @@ const FlipLink: React.FC<FlipLinkProps> = ({ children, href }) => {
             }}
             transition={{
               duration: DURATION,
-              ease: "easeInOut",
+              ease: 'easeInOut',
               delay: STAGGER * i,
             }}
             className="inline-block"
@@ -76,9 +76,9 @@ const FlipLink: React.FC<FlipLinkProps> = ({ children, href }) => {
 
 const RevealLinks: React.FC = () => {
   return (
-    <section className="grid place-content-center gap-2 bg-[#CDEA68] px-8 py-40 text-black heading-text text-center">
+    <section className="grid place-content-center gap-2 bg-[#CDEA68] px-4 sm:px-6 md:px-8 py-16 sm:py-24 md:py-32 lg:py-40 text-black heading-text text-center">
       <FlipLink href="#">Facebook</FlipLink>
-      <div className="flex items-center justify-center gap-8">
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 md:gap-8">
         <FlipLink href="#">Twitter</FlipLink>
         <FlipLink href="#">Linkedin</FlipLink>
       </div>
