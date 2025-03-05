@@ -1,83 +1,79 @@
-"use client";
+'use client';
 
-import { useState } from "react";
+import RoundedButton from '@/components/shared/button/RoundedButton';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
-import Image from "next/image";
-import RoundedButton from "@/components/shared/button/RoundedButton";
+} from '@/components/ui/accordion';
+import Image from 'next/image';
+import { useState } from 'react';
 
 const ClientsReviews = () => {
-  const [openItem, setOpenItem] = useState("item-0");
+  const [openItem, setOpenItem] = useState('item-0');
 
   const clientsReviews = [
     {
-      companyName: "Karman Ventures",
-      services: ["Sales Deck Creation", "Storytelling", "Design"],
-      clientName: "William Barnes",
-      image: "/c1.png",
+      companyName: 'Karman Ventures',
+      services: ['Sales Deck Creation', 'Storytelling', 'Design'],
+      clientName: 'William Barnes',
+      image: '/c1.png',
       description:
-        "They were transparent about the time and the stages of the project. The end product is high quality, and I feel confident about how they were handholding the client through the process. I feel like I can introduce them to someone who needs to put a sales deck together from scratch, and they would be able to handhold the client experience from 0 to 100 very effectively from story to design.",
+        'They were transparent about the time and the stages of the project. The end product is high quality, and I feel confident about how they were handholding the client through the process. I feel like I can introduce them to someone who needs to put a sales deck together from scratch, and they would be able to handhold the client experience from 0 to 100 very effectively from story to design.',
       rating: 5,
     },
     {
-      companyName: "Nimbus Labs",
-      services: ["App Development", "Cloud Integration", "Maintenance"],
-      clientName: "Sophia Carter",
-      image: "/c2.png",
+      companyName: 'Nimbus Labs',
+      services: ['App Development', 'Cloud Integration', 'Maintenance'],
+      clientName: 'Sophia Carter',
+      image: '/c2.png',
       description:
-        "Their team was incredibly professional and delivered a seamless app that perfectly matched our requirements. Their ability to integrate cloud services into our platform exceeded our expectations. Highly recommend them!",
+        'Their team was incredibly professional and delivered a seamless app that perfectly matched our requirements. Their ability to integrate cloud services into our platform exceeded our expectations. Highly recommend them!',
       rating: 4.8,
     },
     {
-      companyName: "Summit Analytics",
-      services: ["Data Visualization", "BI Tools", "Custom Dashboards"],
-      clientName: "Michael Johnson",
-      image: "/c3.png",
+      companyName: 'Summit Analytics',
+      services: ['Data Visualization', 'BI Tools', 'Custom Dashboards'],
+      clientName: 'Michael Johnson',
+      image: '/c3.png',
       description:
-        "The custom dashboards they designed are both functional and visually stunning. Their team was highly collaborative, and their turnaround time was impressive. A great partner for any analytics project.",
+        'The custom dashboards they designed are both functional and visually stunning. Their team was highly collaborative, and their turnaround time was impressive. A great partner for any analytics project.',
       rating: 5,
     },
     {
-      companyName: "Eco Innovations",
-      services: [
-        "Sustainability Consulting",
-        "Project Management",
-        "Green Tech Solutions",
-      ],
-      clientName: "Emma Lee",
-      image: "/c4.png",
+      companyName: 'Eco Innovations',
+      services: ['Sustainability Consulting', 'Project Management', 'Green Tech Solutions'],
+      clientName: 'Emma Lee',
+      image: '/c4.png',
       description:
-        "They brought a wealth of knowledge and expertise to our sustainability projects. Their solutions were innovative, and they guided us every step of the way to ensure successful implementation. Truly a great experience.",
+        'They brought a wealth of knowledge and expertise to our sustainability projects. Their solutions were innovative, and they guided us every step of the way to ensure successful implementation. Truly a great experience.',
       rating: 4.9,
     },
     {
-      companyName: "Pixelwave Studios",
-      services: ["Branding", "Graphic Design", "Social Media Management"],
-      clientName: "James Oliver",
-      image: "/c5.jpg",
+      companyName: 'Pixelwave Studios',
+      services: ['Branding', 'Graphic Design', 'Social Media Management'],
+      clientName: 'James Oliver',
+      image: '/c5.jpg',
       description:
-        "The team at Pixelwave Studios elevated our brand to a whole new level. Their creativity and attention to detail are unmatched. Our social media engagement has significantly increased thanks to their strategy.",
+        'The team at Pixelwave Studios elevated our brand to a whole new level. Their creativity and attention to detail are unmatched. Our social media engagement has significantly increased thanks to their strategy.',
       rating: 4.7,
     },
     {
-      companyName: "Trailblazer IT Solutions",
-      services: ["IT Support", "Cybersecurity", "Infrastructure Setup"],
-      clientName: "Olivia Martin",
-      image: "/c6.png",
+      companyName: 'Trailblazer IT Solutions',
+      services: ['IT Support', 'Cybersecurity', 'Infrastructure Setup'],
+      clientName: 'Olivia Martin',
+      image: '/c6.png',
       description:
-        "They provided exceptional IT support for our company. The cybersecurity measures they implemented have given us peace of mind. I would gladly work with them again for future projects.",
+        'They provided exceptional IT support for our company. The cybersecurity measures they implemented have given us peace of mind. I would gladly work with them again for future projects.',
       rating: 5,
     },
   ];
 
   return (
-    <div className="pb-24">
-      <h2 className="text-7xl pt-20 py-16 px-16 border-b border-black/15">
-        Clients’ reviews
+    <div className="pb-12 sm:pb-16 lg:pb-24">
+      <h2 className="text-3xl sm:text-5xl lg:text-7xl pt-8 sm:pt-12 lg:pt-20 py-6 sm:py-10 lg:py-16 px-4 sm:px-8 lg:px-16 border-b border-black/15">
+        Clients&#39; reviews
       </h2>
       <div className="">
         <Accordion
@@ -87,25 +83,21 @@ const ClientsReviews = () => {
           onValueChange={(value) => setOpenItem(value)}
         >
           {clientsReviews.map((review, idx) => (
-            <AccordionItem
-              key={idx}
-              className="px-16 py-1"
-              value={`item-${idx}`}
-            >
+            <AccordionItem key={idx} className="px-4 sm:px-8 lg:px-16 py-1" value={`item-${idx}`}>
               <AccordionTrigger>
-                <div className="grid grid-cols-4 items-center justify-between text-2xl font-normal w-full ">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 items-center justify-between text-base sm:text-xl lg:text-2xl font-normal w-full">
                   <h2 className="col-span-1">{review.companyName}</h2>
                   <h2
-                    className={`uppercase col-span-1 ps-2 ${
-                      openItem === `item-${idx}` ? "visible" : "invisible"
+                    className={`uppercase col-span-1 ps-2 hidden md:block ${
+                      openItem === `item-${idx}` ? 'visible' : 'invisible'
                     }`}
                   >
                     Services
                   </h2>
-                  <h2 className="col-span-1">{review.clientName}</h2>
+                  <h2 className="col-span-1 hidden md:block">{review.clientName}</h2>
                   <h2
-                    className={`uppercase col-span-1  text-end ${
-                      openItem === `item-${idx}` ? "opacity-30" : "opacity-100"
+                    className={`uppercase col-span-1 text-end ${
+                      openItem === `item-${idx}` ? 'opacity-30' : 'opacity-100'
                     }`}
                   >
                     Read
@@ -113,30 +105,33 @@ const ClientsReviews = () => {
                 </div>
               </AccordionTrigger>
               <AccordionContent>
-                <div className="grid grid-cols-4 items-start justify-between text-2xl font-normal w-full py-16">
-                  <h2 className="col-span-1"></h2>
-                  <h2 className="uppercase col-span-1">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-start justify-between text-base sm:text-xl lg:text-2xl font-normal w-full py-6 sm:py-10 lg:py-16">
+                  <h2 className="col-span-1 hidden lg:block"></h2>
+                  <h2 className="uppercase col-span-1 mb-4 md:mb-0">
                     {review.services.map((service, idx) => (
                       <div className="pb-2" key={idx}>
-                        <div className=" inline-block">
-                          <RoundedButton className="px-3 py-1 text-xl rounded-full border me-1.5 uppercase  border-black/70 font-medium">
+                        <div className="inline-block">
+                          <RoundedButton className="px-2 sm:px-3 py-0.5 sm:py-1 text-sm sm:text-lg lg:text-xl rounded-full border me-1.5 uppercase border-black/70 font-medium">
                             {service}
                           </RoundedButton>
                         </div>
                       </div>
                     ))}
                   </h2>
-                  <div className="col-span-2 ">
+                  <div className="col-span-1 md:col-span-1 lg:col-span-2">
                     <div className="">
                       <Image
-                        src={review.image}
+                        src={review.image || '/placeholder.svg'}
                         alt={review.clientName}
                         width={200}
                         height={200}
-                        className="w-36 h-36 rounded-2xl "
+                        className="w-24 h-24 sm:w-32 sm:h-32 lg:w-36 lg:h-36 rounded-2xl"
+                        priority
                       />
                     </div>
-                    <p className="text-xl pt-6 w-8/12">{review.description}</p>
+                    <p className="text-sm sm:text-lg lg:text-xl pt-4 sm:pt-6 w-full md:w-10/12 lg:w-8/12">
+                      {review.description}
+                    </p>
                   </div>
                 </div>
               </AccordionContent>

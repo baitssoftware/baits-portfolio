@@ -1,29 +1,29 @@
-"use client";
+'use client';
 
-import CountUp from "@/components/shared/count/CountUp";
-import { motion } from "framer-motion";
-import Image from "next/image";
+import CountUp from '@/components/shared/count/CountUp';
+import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const stats = [
-  { number: 15, label: "Years of Experience" },
-  { number: 1500, label: "Projects Done" },
-  { number: 2000, label: "Happy Client" },
-  { number: 30, label: "Country Served" },
-  { number: 18, label: "App Downloads" },
-  { number: 50, label: "Dedicated Developers" },
-  { number: 795, label: "Websites Developed" },
-  { number: 4, label: "Rating on Clutch.co" },
+  { number: 15, label: 'Years of Experience' },
+  { number: 1500, label: 'Projects Done' },
+  { number: 2000, label: 'Happy Client' },
+  { number: 30, label: 'Country Served' },
+  { number: 18, label: 'App Downloads' },
+  { number: 50, label: 'Dedicated Developers' },
+  { number: 795, label: 'Websites Developed' },
+  { number: 4, label: 'Rating on Clutch.co' },
 ];
 
 export default function StatsSection() {
   return (
-    <section className=" px-16 py-16 pb-0 ">
-      <h2 className="text-7xl pt-20 py-16 border-b border-black/15">
+    <section className="px-4 sm:px-8 md:px-12 lg:px-16 py-8 sm:py-12 lg:py-16 pb-0">
+      <h2 className="text-3xl sm:text-5xl lg:text-7xl pt-8 sm:pt-12 md:pt-16 lg:pt-20 py-6 sm:py-10 md:py-12 lg:py-16 border-b border-black/15">
         We Make your Business Bright
       </h2>
 
-      <div className="grid lg:grid-cols-2 gap-12 items-center">
-        <div className="grid grid-cols-2 gap-8 ps-20">
+      <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center pt-8 lg:pt-0">
+        <div className="grid  grid-cols-2 gap-6 sm:gap-8 ps-0 sm:ps-4 md:ps-10 lg:ps-20">
           {stats.map((stat, index) => (
             <motion.div
               key={index}
@@ -33,9 +33,9 @@ export default function StatsSection() {
               transition={{ delay: index * 0.1 }}
               className="relative"
             >
-              <div className="absolute left-0 top-0 w-[2px] h-8 bg-orange-500" />
+              <div className="absolute left-0 top-0 w-[2px] h-6 sm:h-8 bg-orange-500" />
               <div className="pl-6">
-                <div className="text-4xl font-medium text-gray-900 mb-2">
+                <div className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-medium text-gray-900 mb-1 sm:mb-2">
                   <CountUp
                     from={0}
                     to={stat.number}
@@ -45,7 +45,7 @@ export default function StatsSection() {
                     className="count-up-text"
                   />
                 </div>
-                <div className="text-gray-500 whitespace-pre-line">
+                <div className="text-sm sm:text-base lg:text-base text-gray-500 whitespace-pre-line">
                   {stat.label}
                 </div>
               </div>
@@ -53,7 +53,7 @@ export default function StatsSection() {
           ))}
         </div>
 
-        <div className="relative">
+        <div className="relative mt-10 lg:mt-0">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -66,34 +66,10 @@ export default function StatsSection() {
               width={500}
               height={400}
               className="w-full object-cover"
+              priority
             />
-            {/* <div className="absolute bottom-4 right-[-20px] bg-white p-4 rounded-lg shadow-lg max-w-[280px]">
-              <div className="flex items-start gap-3">
-                <Image
-                  src="/team.jpg"
-                  alt="Profile"
-                  width={40}
-                  height={40}
-                  className="rounded-full"
-                />
-                <div>
-                  <p className="text-sm text-gray-900">
-                    Blessing welcomed ladyship she met humoured sir breeding
-                    her.
-                  </p>
-                  <div className="mt-2">
-                    <p className="text-sm font-medium">
-                      Linda, Project Manager
-                    </p>
-                    <div className="flex text-yellow-400 text-xs mt-1">
-                      {"★".repeat(5)}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> */}
           </motion.div>
-          <div className="absolute right-[-40px] top-[40%] w-20 h-40 bg-orange-500/10 rounded-full blur-3xl" />
+          <div className="hidden sm:block absolute right-[-20px] md:right-[-30px] lg:right-[-40px] top-[40%] w-12 sm:w-16 md:w-20 lg:w-20 h-24 sm:h-32 md:h-40 lg:h-40 bg-orange-500/10 rounded-full blur-3xl" />
         </div>
       </div>
     </section>
