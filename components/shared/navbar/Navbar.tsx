@@ -45,21 +45,18 @@ const Navbar = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <header className="px-16 py-6 z-50">
+    <header className="px-4 sm:px-6 md:px-8 lg:px-16 py-4 sm:py-5 lg:py-6 z-50">
       <Sheet open={isActive} onOpenChange={(open) => setIsActive(open)}>
         <div className="flex items-center justify-between">
           <div>
             <Link href="/" className="">
-              {/* <h1 className="text-xl tracking-tight">
-                Bangladesh Associate of IT Solution
-              </h1> */}
               <Image
                 width={120}
                 height={200}
                 src={'/BAITS-04.svg'}
                 alt="baits logo"
-                className="h-9 "
-              ></Image>
+                className="h-7 sm:h-8 lg:h-9 w-auto"
+              />
             </Link>
           </div>
 
@@ -80,14 +77,16 @@ const Navbar = () => {
                     initial={{ opacity: 0, y: -50 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -50 }}
-                    transition={{ duration: 0.5 }} // Increased duration for slower animation
-                    className="p-10 shadow-xl overflow-hidden"
+                    transition={{ duration: 0.5 }}
+                    className="p-4 sm:p-6 md:p-8 lg:p-10 shadow-xl overflow-hidden"
                   >
-                    <h1 className="text-2xl tracking-tight">Bangladesh Associate of IT Solution</h1>
-                    <div className="grid grid-cols-3">
-                      <div className="col-span-1 col-start-3 min-h-[45vh] text-2xl flex flex-col justify-between">
+                    <h1 className="text-xl sm:text-2xl tracking-tight">
+                      Bangladesh Associate of IT Solution
+                    </h1>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-6 md:mt-0">
+                      <div className="col-span-1 lg:col-span-1 lg:col-start-3 min-h-[30vh] lg:min-h-[45vh] text-lg sm:text-xl lg:text-2xl flex flex-col justify-between">
                         <div>
-                          <p className="pb-4">M:</p>
+                          <p className="pb-2 sm:pb-4">M:</p>
                           <p className="flex flex-col gap-0.5">
                             {menuLinks.map((link, index) => (
                               <span key={index}>
@@ -105,7 +104,7 @@ const Navbar = () => {
                             ))}
                           </p>
                         </div>
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 mt-6 lg:mt-0">
                           {['facebook', 'linkedin', 'instagram'].map((platform, index) => (
                             <button key={index}>
                               <a
@@ -121,9 +120,9 @@ const Navbar = () => {
                     </div>
                   </motion.div>
 
-                  <motion.div className="p-10 overflow-hidden">
-                    <div className="grid grid-cols-3">
-                      <h3 className="text-[20rem] leading-[4rem] font-semibold mb-10">
+                  <motion.div className="p-4 sm:p-6 md:p-8 lg:p-10 overflow-hidden">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                      <h3 className="text-6xl sm:text-8xl md:text-[10rem] lg:text-[20rem] leading-none sm:leading-[3rem] md:leading-[4rem] font-semibold mb-6 sm:mb-10">
                         ©{currentYear}
                       </h3>
                       <motion.div
@@ -131,10 +130,10 @@ const Navbar = () => {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -90 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
-                        className="col-span-1 col-start-3 flex gap-10"
+                        className="col-span-1 md:col-span-2 lg:col-span-1 lg:col-start-3 flex flex-col sm:flex-row gap-6 sm:gap-10"
                       >
                         <nav>
-                          <ul className="flex flex-col text-xl">
+                          <ul className="flex flex-col text-base sm:text-lg lg:text-xl">
                             {navItems.slice(0, 4).map((item, index) => (
                               <li key={index}>
                                 <Link
@@ -152,7 +151,7 @@ const Navbar = () => {
                           </ul>
                         </nav>
                         <nav>
-                          <ul className="flex flex-col text-xl">
+                          <ul className="flex flex-col text-base sm:text-lg lg:text-xl">
                             {navItems.slice(4).map((item, index) => (
                               <li key={index}>
                                 <Link
