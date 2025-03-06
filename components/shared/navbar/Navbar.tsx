@@ -68,7 +68,7 @@ const Navbar = () => {
             </SheetTrigger>
           </div>
 
-          <SheetContent side="top" className="h-[80vh] pt-16 p-0 overflow-hidden">
+          <SheetContent side="top" className="md:h-[80vh] h-full pt-16 p-0 overflow-hidden">
             <DialogTitle></DialogTitle>
             <AnimatePresence>
               {isActive && (
@@ -122,7 +122,7 @@ const Navbar = () => {
 
                   <motion.div className="p-4 sm:p-6 md:p-8 lg:p-10 overflow-hidden">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-                      <h3 className="text-6xl sm:text-8xl md:text-[10rem] lg:text-[20rem] leading-none sm:leading-[3rem] md:leading-[4rem] font-semibold mb-6 sm:mb-10">
+                      <h3 className="text-6xl sm:text-8xl md:text-[10rem] lg:text-[20rem] leading-none sm:leading-[3rem] md:leading-[4rem] font-semibold mb-6 sm:mb-10 lg:block hidden">
                         ©{currentYear}
                       </h3>
                       <motion.div
