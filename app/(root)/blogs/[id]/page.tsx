@@ -22,27 +22,37 @@ export default async function BlogPost({ params }: { params: { id: string } }) {
   return (
     <article className="min-h-screen">
       {/* Header Section */}
-      <div className="max-w-[1400px] mx-auto px-4 pt-8">
-        <Link href="/insights" className="inline-flex items-center text-sm hover:underline mb-12">
+      <div className="max-w-[1400px] mx-auto px-4 pt-4 sm:pt-8">
+        <Link
+          href="/blogs"
+          className="inline-flex items-center text-sm hover:underline mb-6 sm:mb-12"
+        >
           <ArrowLeft className="w-4 h-4 mr-2" />
           Back to insights
         </Link>
 
         <div className="max-w-4xl">
-          <h1 className="text-4xl md:text-5xl font-normal mb-8">{post.title}</h1>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-normal mb-6 sm:mb-8">
+            {post.title}
+          </h1>
 
-          <div className="flex items-center justify-between mb-12">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8 sm:mb-12 space-y-4 sm:space-y-0">
             <div className="flex items-center gap-4">
               <span className="text-sm">{post.date}</span>
               <span className="text-sm">By {post.author}</span>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap items-center gap-2">
               {post.categories.map((category, index) => (
-                <span key={index} className="text-sm px-3 py-1 rounded-full border border-black/10">
+                <span
+                  key={index}
+                  className="text-xs sm:text-sm px-3 py-1 rounded-full border border-black/10"
+                >
                   {category}
                 </span>
               ))}
-              <span className="text-sm text-black/50 ml-4">Share this article</span>
+              <span className="text-xs sm:text-sm text-black/50 ml-2 sm:ml-4 hidden sm:inline-block">
+                Share this article
+              </span>
             </div>
           </div>
         </div>
@@ -50,7 +60,7 @@ export default async function BlogPost({ params }: { params: { id: string } }) {
 
       {/* Main Content */}
       <div className="max-w-[1400px] mx-auto px-4">
-        <div className="rounded-lg overflow-hidden mb-16">
+        <div className="rounded-lg overflow-hidden mb-8 sm:mb-16">
           <Image
             src={post.featuredImage || '/placeholder.svg'}
             alt={post.title}
@@ -61,12 +71,15 @@ export default async function BlogPost({ params }: { params: { id: string } }) {
         </div>
 
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl md:text-3xl mb-8">{post.subtitle}</h2>
+          <h2 className="text-xl sm:text-2xl md:text-3xl mb-6 sm:mb-8">{post.subtitle}</h2>
 
-          <div className="text-lg mb-16" dangerouslySetInnerHTML={{ __html: post.content }} />
+          <div
+            className="text-base sm:text-lg mb-12 sm:mb-16"
+            dangerouslySetInnerHTML={{ __html: post.content }}
+          />
 
           {post.gallery && (
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 my-16">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 my-12 sm:my-16">
               {post.gallery.map((image, index) => (
                 <div
                   key={index}
@@ -83,40 +96,51 @@ export default async function BlogPost({ params }: { params: { id: string } }) {
             </div>
           )}
 
-          <div className="text-center mb-16">
-            <Link href="/contact" className="text-lg underline underline-offset-4">
+          <div className="text-center mb-12 sm:mb-16 px-4">
+            <Link href="/contact" className="text-base sm:text-lg underline underline-offset-4">
               Contact us today to see how we can bring your vision to life.
             </Link>
           </div>
 
-          <div className="flex items-center justify-between py-8 border-t border-black/10">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between py-6 sm:py-8 border-t border-black/10 space-y-4 sm:space-y-0">
             <div className="flex items-center gap-4">
               <span className="text-sm">{post.date}</span>
               <span className="text-sm">By {post.author}</span>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap items-center gap-2">
               {post.categories.map((category, index) => (
-                <span key={index} className="text-sm px-3 py-1 rounded-full border border-black/10">
+                <span
+                  key={index}
+                  className="text-xs sm:text-sm px-3 py-1 rounded-full border border-black/10"
+                >
                   {category}
                 </span>
               ))}
-              <span className="text-sm text-black/50 ml-4">Share this article</span>
+              <span className="text-xs sm:text-sm text-black/50 ml-2 sm:ml-4 hidden sm:inline-block">
+                Share this article
+              </span>
             </div>
           </div>
         </div>
       </div>
 
       {/* More Like This Section */}
-      <div className="bg-[#004851] text-white mt-24">
-        <div className="max-w-[1400px] mx-auto px-4 py-24">
-          <h2 className="text-6xl md:text-8xl mb-16">THIS IS MORE LIKE IT</h2>
-          <p className="text-xl mb-16">Latest publications:</p>
+      <div className="bg-[#004851] text-white mt-12 sm:mt-24">
+        <div className="max-w-[1400px] mx-auto px-4 py-12 sm:py-24">
+          <h2 className="text-4xl sm:text-6xl md:text-8xl mb-8 sm:mb-16">THIS IS MORE LIKE IT</h2>
+          <p className="text-lg sm:text-xl mb-8 sm:mb-16">Latest publications:</p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
             {relatedPosts.map((relatedPost) => (
-              <Link href={`/insights/${relatedPost.slug}`} key={relatedPost.id} className="group">
-                <h3 className="text-xl mb-2 group-hover:underline">{relatedPost.title}</h3>
-                <p className="text-sm text-white/60">
+              <Link
+                href={`/blogs/${relatedPost.slug}`}
+                key={relatedPost.id}
+                className="group mb-6 sm:mb-0"
+              >
+                <h3 className="text-lg sm:text-xl mb-2 group-hover:underline">
+                  {relatedPost.title}
+                </h3>
+                <p className="text-xs sm:text-sm text-white/60">
                   By {relatedPost.author}
                   <span className="mx-2">·</span>
                   {relatedPost.date}
