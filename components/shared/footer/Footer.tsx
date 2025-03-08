@@ -20,20 +20,20 @@ const footerSections = {
   services: {
     title: 'SERVICES',
     links: [
-      { name: 'Web Development', href: '#' },
-      { name: 'Mobile Apps', href: '#' },
-      { name: 'Cloud Solutions', href: '#' },
-      { name: 'AI Integration', href: '#' },
-      { name: 'DevOps', href: '#' },
+      { name: 'Web Development', href: '/services' },
+      { name: 'Mobile Apps', href: '/services' },
+      { name: 'Cloud Solutions', href: '/services' },
+      { name: 'AI Integration', href: '/services' },
+      { name: 'DevOps', href: '/services' },
     ],
   },
   resources: {
     title: 'RESOURCES',
     links: [
-      { name: 'Documentation', href: '#' },
-      { name: 'API Reference', href: '#' },
-      { name: 'Status Page', href: '#' },
-      { name: 'Support', href: '#' },
+      { name: 'Documentation', href: '/contact' },
+      { name: 'API Reference', href: '/contact' },
+      { name: 'Status Page', href: '/contact' },
+      { name: 'Support', href: '/contact' },
     ],
   },
   importantLink: {
@@ -43,8 +43,8 @@ const footerSections = {
       { name: 'Trams & Conditions', href: '/trams-and-conditions' },
       { name: 'Career', href: '/career' },
       { name: 'Contact', href: '/contact' },
-      { name: 'Account', href: '/account' },
-      { name: 'Log In', href: '/login' },
+      // { name: 'Account', href: '/account' },
+      // { name: 'Log In', href: '/login' },
     ],
   },
 };

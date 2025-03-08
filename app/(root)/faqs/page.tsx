@@ -55,8 +55,8 @@ const FAQ = () => {
   ];
 
   return (
-    <div className="pb-24">
-      <h2 className="text-5xl md:text-7xl pt-20 py-16 px-4 md:px-16 border-b border-black/15">
+    <div className="pb-12 sm:pb-16 md:pb-24">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl pt-10 sm:pt-16 md:pt-20 py-8 sm:py-12 md:py-16 px-4 sm:px-8 md:px-16 border-b border-black/15">
         A few things you may want to ask us:
       </h2>
       <div>
@@ -69,8 +69,28 @@ const FAQ = () => {
         >
           {faqItems.map((item, idx) => (
             <AccordionItem key={idx} className="border-b border-black/15" value={`item-${idx}`}>
-              <AccordionTrigger className="hover:no-underline px-4 md:px-16 py-6">
-                <div className="grid grid-cols-4 items-center justify-between text-lg md:text-2xl font-normal w-full">
+              <AccordionTrigger className="hover:no-underline px-4 sm:px-8 md:px-16 py-4 sm:py-6">
+                {/* Mobile layout (default) */}
+                <div className="flex flex-col space-y-2 w-full lg:hidden">
+                  <h2 className="text-left text-lg sm:text-xl font-normal">{item.question}</h2>
+                  <div className="flex justify-between items-center">
+                    <h2
+                      className={`text-sm ${openItem === `item-${idx}` ? 'visible' : 'invisible'}`}
+                    >
+                      Description:
+                    </h2>
+                    <h2
+                      className={`text-sm ${
+                        openItem === `item-${idx}` ? 'opacity-30' : 'opacity-100'
+                      }`}
+                    >
+                      READ
+                    </h2>
+                  </div>
+                </div>
+
+                {/* Desktop layout (lg and above) */}
+                <div className="hidden lg:grid grid-cols-4 items-center justify-between text-lg md:text-2xl font-normal w-full">
                   <h2 className="col-span-2 text-left">{item.question}</h2>
                   <h2
                     className={`col-span-1 ${openItem === `item-${idx}` ? 'visible' : 'invisible'}`}
@@ -87,7 +107,13 @@ const FAQ = () => {
                 </div>
               </AccordionTrigger>
               <AccordionContent>
-                <div className="grid grid-cols-4 items-start justify-between text-lg md:text-2xl font-normal w-full px-4 md:px-16 py-16">
+                {/* Mobile layout (default) */}
+                <div className="px-4 sm:px-8 md:px-16 py-6 sm:py-8 md:py-12 lg:hidden">
+                  <p className="text-sm sm:text-base">{item.description}</p>
+                </div>
+
+                {/* Desktop layout (lg and above) */}
+                <div className="hidden lg:grid grid-cols-4 items-start justify-between text-lg md:text-2xl font-normal w-full px-4 md:px-16 py-16">
                   <h2 className="col-span-2"></h2>
                   <div className="col-span-2">
                     <p className="text-base md:text-xl">{item.description}</p>

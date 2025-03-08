@@ -20,8 +20,8 @@ const Navbar = () => {
     { label: 'Trams & Conditions', href: '/trams-and-conditions' },
     { label: 'Career', href: '/career' },
     { label: 'Contact', href: '/contact' },
-    { label: 'Account', href: '/account' },
-    { label: 'Log In', href: '/login' },
+    // { label: 'Account', href: '/account' },
+    // { label: 'Log In', href: '/login' },
   ];
   const menuLinks = [
     { name: 'Home', href: '/' },
