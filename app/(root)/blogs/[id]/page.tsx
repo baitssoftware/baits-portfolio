@@ -4,15 +4,15 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
-export async function generateMetadata({ params }: { params: { id: string } }) {
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
   const resolvedParams = await params;
   const post = await getBlogPost(resolvedParams.id);
-  if (!post) return { title: 'Post Not Found' };
+  if (!post) return { title: 'Post Not Found..' };
   console.log({ params: resolvedParams });
   return { title: post.title };
 }
 
-export default async function BlogPost({ params }: { params: { id: string } }) {
+export default async function BlogPost({ params }: { params: Promise<{ id: string }> }) {
   const resolvedParams = await params;
   const post = await getBlogPost(resolvedParams.id);
   if (!post) notFound();
