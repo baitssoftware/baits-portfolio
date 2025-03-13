@@ -1,14 +1,13 @@
-import Footer from "@/components/shared/footer/Footer";
-import Navbar from "@/components/shared/navbar/Navbar";
-import SmoothScroll from "@/components/shared/scroll/SmoothScroll";
+import Footer from '@/components/shared/footer/Footer';
+import Navbar from '@/components/shared/navbar/Navbar';
 
 const layout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
   return (
-    <SmoothScroll>
+    <>
       <Navbar />
       {children}
       <Footer />
-    </SmoothScroll>
+    </>
   );
 };
 

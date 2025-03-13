@@ -39,18 +39,20 @@ const AboutUs = () => {
     'who does that.',
   ];
   const twoPrinciples = ['We save businesses from ugly', 'and ineffective presentations.'];
+
   return (
-    <div className="">
-      <div className="grid grid-cols-8 pb-28 pt-6 px-16  gap-28 text-2xl">
-        <div className="col-span-4">
-          <p className="">About Us:</p>
+    <div>
+      {/* About Us section */}
+      <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-8 pb-12 sm:pb-16 md:pb-20 lg:pb-28 pt-4 sm:pt-6 px-4 sm:px-8 md:px-12 lg:px-16 gap-8 md:gap-16 lg:gap-28 text-xl lg:text-2xl">
+        <div className="col-span-1 md:col-span-2 lg:col-span-4 mb-6 md:mb-0">
+          <p>About Us:</p>
         </div>
-        <div className="col-span-2">
-          <AnimatedText text={aboutText} className=" pb-8 text-2xl" />
-          <AnimatedText text={aboutText2} className=" pb-8 text-2xl" />
+        <div className="col-span-1 md:col-span-2">
+          <AnimatedText text={aboutText} className="pb-4 sm:pb-6 md:pb-8 text-xl lg:text-2xl" />
+          <AnimatedText text={aboutText2} className="pb-4 sm:pb-6 md:pb-8 text-xl lg:text-2xl" />
         </div>
-        <div className="col-span-2 text-end ms-auto">
-          <button className="uppercase flex items-center justify-center gap-2">
+        <div className="col-span-1 md:col-span-2 text-start md:text-end md:ms-auto mt-6 md:mt-0">
+          <button className="uppercase flex items-center justify-start md:justify-center gap-2">
             <p className="border border-black/15 rounded-full py-2 px-4">Our Work</p>
             <p className="border border-black/15 rounded-full p-2.5">
               <ArrowUpRight />
@@ -58,35 +60,60 @@ const AboutUs = () => {
           </button>
         </div>
       </div>
-      <div className=" border-b border-black/15 pb-6">
-        <AnimatedText text={businessText} className="text-7xl w-7/12 px-16 " />
+
+      {/* Business text section */}
+      <div className="border-b border-black/15 pb-4 sm:pb-6">
+        <AnimatedText
+          text={businessText}
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl w-full sm:w-10/12 md:w-9/12 lg:w-7/12 px-4 sm:px-8 md:px-12 lg:px-16"
+        />
       </div>
-      <div className="grid grid-cols-8 pb-28 pt-6 px-16 gap-28 text-2xl">
-        <div className="col-span-4">
-          <AnimatedText text={businessText02} className="text-2xl" />
+
+      {/* Business text grid section */}
+      <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-8 pb-12 sm:pb-16 md:pb-20 lg:pb-28 pt-4 sm:pt-6 px-4 sm:px-8 md:px-12 lg:px-16 gap-8 md:gap-16 lg:gap-28 text-xl lg:text-2xl">
+        <div className="col-span-1 md:col-span-2 lg:col-span-4 mb-6 md:mb-0">
+          <AnimatedText text={businessText02} className="text-xl lg:text-2xl" />
         </div>
-        <div className="col-span-2">
-          <AnimatedText text={businessText03} className=" pb-8 text-2xl" />
-          <AnimatedText text={businessText04} className=" pb-8 text-2xl" />
+        <div className="col-span-1 md:col-span-2">
+          <AnimatedText
+            text={businessText03}
+            className="pb-4 sm:pb-6 md:pb-8 text-xl lg:text-2xl"
+          />
+          <AnimatedText
+            text={businessText04}
+            className="pb-4 sm:pb-6 md:pb-8 text-xl lg:text-2xl"
+          />
         </div>
       </div>
+
+      {/* Background image section */}
       <div
-        className="h-screen mx-16 rounded-3xl"
+        className="h-[50vh] sm:h-[60vh] md:h-[80vh] lg:h-screen mx-4 sm:mx-8 md:mx-12 lg:mx-16 rounded-xl md:rounded-2xl lg:rounded-3xl"
         style={{
           background: 'url(/team.jpg)',
           backgroundSize: 'cover',
+          backgroundPosition: 'center',
           backgroundAttachment: 'fixed',
           backgroundRepeat: 'no-repeat',
         }}
       ></div>
-      <div className=" mt-16">
+
+      {/* Marquee and slider section */}
+      <div className="mt-8 sm:mt-12 md:mt-16">
         <MarqueeText text={'WE are baits.'} />
         <Slider slides={slides} />
       </div>
-      <div className=" border-b border-black/15 pb-16 pt-36">
-        <AnimatedText text={twoPrinciples} className="text-7xl w-7/12 px-16 " />
+
+      {/* Two principles section */}
+      <div className="border-b border-black/15 pb-8 sm:pb-12 md:pb-16 pt-16 sm:pt-24 md:pt-36">
+        <AnimatedText
+          text={twoPrinciples}
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl w-full sm:w-10/12 md:w-9/12 lg:w-7/12 px-4 sm:px-8 md:px-12 lg:px-16"
+        />
       </div>
-      <div className="px-16 grid grid-cols-2 gap-6 text-2xl pb-16">
+
+      {/* Two-column image and text section */}
+      <div className="px-4 sm:px-8 md:px-12 lg:px-16 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-6 text-xl lg:text-2xl pb-8 sm:pb-12 md:pb-16">
         <div className="col-span-1">
           <Image
             height={500}
@@ -94,29 +121,34 @@ const AboutUs = () => {
             className="w-full"
             src={'/about-01.jpg'}
             alt="about page image"
-          ></Image>
-          <h2 className=" w-6/12 pt-6">
+          />
+          <h2 className="w-full md:w-9/12 lg:w-6/12 pt-4 md:pt-6">
             Whether the presentation needs to convince or educate it always has to change audience
             perception. We seek insights to make decks unexpectedly enlightening for our audience.
           </h2>
         </div>
-        <div className="col-span-1">
+        <div className="col-span-1 mt-8 md:mt-0">
           <Image
             height={500}
             width={500}
             className="w-full"
             src={'/about-02.jpg'}
             alt="about page image"
-          ></Image>
-          <h2 className="w-6/12 pt-6">
+          />
+          <h2 className="w-full md:w-9/12 lg:w-6/12 pt-4 md:pt-6">
             The presentation helps to see what&#39;s hidden, unseen, or simply never known before.
             We use design to drive their attention, focus them to clearly see, and help them feel
             the message.
           </h2>
         </div>
       </div>
-      <div className=" border-b border-black/15 pb-16 pt-36">
-        <AnimatedText text={twoPrinciples} className="text-7xl w-7/12 px-16 " />
+
+      {/* Final animated text section */}
+      <div className="border-b border-black/15 pb-8 sm:pb-12 md:pb-16 pt-16 sm:pt-24 md:pt-36">
+        <AnimatedText
+          text={twoPrinciples}
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl w-full sm:w-10/12 md:w-9/12 lg:w-7/12 px-4 sm:px-8 md:px-12 lg:px-16"
+        />
       </div>
     </div>
   );
