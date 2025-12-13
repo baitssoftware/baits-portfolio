@@ -12,6 +12,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   return { title: post.title };
 }
 
+
 export default async function BlogPost({ params }: { params: Promise<{ id: string }> }) {
   const resolvedParams = await params;
   const post = await getBlogPost(resolvedParams.id);
