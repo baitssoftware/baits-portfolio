@@ -1,5 +1,3 @@
-"use server";
-
 interface FormData {
   name: string;
   company: string;

@@ -1,5 +1,4 @@
 'use client';
-
 import Insights from './components/Insights';
 
 const Page = () => {

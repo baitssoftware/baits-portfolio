@@ -2,8 +2,9 @@
 const nextConfig = {
   output: "export",
   images: {
-    unoptimized: true
-  }
+    unoptimized: true, // IMPORTANT for cPanel
+  },
 };
 
 module.exports = nextConfig;
+

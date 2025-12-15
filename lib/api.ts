@@ -40,18 +40,18 @@ const posts: BlogPost[] = [
 
 export async function getBlogPost(slug: string): Promise<BlogPost | null> {
   // Simulate API delay
-  await new Promise((resolve) => setTimeout(resolve, 100));
+  // await new Promise((resolve) => setTimeout(resolve, 100));
   return posts.find((post) => post.slug === slug) || null;
 }
 
 export async function getRelatedPosts(currentPostId: string): Promise<BlogPost[]> {
   // Simulate API delay
-  await new Promise((resolve) => setTimeout(resolve, 100));
+  // await new Promise((resolve) => setTimeout(resolve, 100));
   return posts.filter((post) => post.id !== currentPostId).slice(0, 3);
 }
 
 export async function getBlogPosts(): Promise<BlogPost[]> {
   // Simulate API delay
-  await new Promise((resolve) => setTimeout(resolve, 100));
+  // await new Promise((resolve) => setTimeout(resolve, 100));
   return posts;
 }

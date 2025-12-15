@@ -1,27 +1,43 @@
-import { getBlogPost, getRelatedPosts } from '@/lib/api';
+import { getBlogPost, getBlogPosts, getRelatedPosts } from '@/lib/api';
 import { ArrowLeft } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
 
-export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
-  const resolvedParams = await params;
-  const post = await getBlogPost(resolvedParams.id);
-  if (!post) return { title: 'Post Not Found..' };
-  console.log({ params: resolvedParams });
-  return { title: post.title };
+export async function generateStaticParams() {
+  const posts = await getBlogPosts();
+
+  return posts.map((post) => ({
+    id: post.slug,
+  }));
+}
+export async function generateMetadata({ params }: { params: { id: string } }) {
+  const post = await getBlogPost(params.id);
+  if (!post) return { title: "Post Not Found.." };
+
+  return {
+    title: post.title,
+  };
 }
 
+export default async function BlogPost({
+  params,
+}: {
+  params: { id: string };
+}) {
+  const post = await getBlogPost(params.id);
 
-export default async function BlogPost({ params }: { params: Promise<{ id: string }> }) {
-  const resolvedParams = await params;
-  const post = await getBlogPost(resolvedParams.id);
-  if (!post) notFound();
+  if (!post) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <h1>Post Not Found</h1>
+      </div>
+    );
+  }
 
   const relatedPosts = await getRelatedPosts(post.id);
-
   return (
     <article className="min-h-screen">
+
       {/* Header Section */}
       <div className="max-w-[1400px] mx-auto px-4 pt-4 sm:pt-8">
         <Link
@@ -151,6 +167,7 @@ export default async function BlogPost({ params }: { params: Promise<{ id: strin
           </div>
         </div>
       </div>
+
     </article>
   );
 }
